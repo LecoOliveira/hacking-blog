@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+
 
 const montserrat = Montserrat ({
   weight: ['200', '400', '500', '700'],
@@ -24,7 +27,9 @@ export default function RootLayout({
         <meta name='viewport' content='width=device-width, initial-content=1.0' />
       </head>
       <body>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
