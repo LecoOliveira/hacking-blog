@@ -1,10 +1,8 @@
-import { NotionDatabaseResponse } from "@/types/notionTypes";
 import { Client } from "@notionhq/client";
-import React from "react";
 import { downloadImage } from "./downloadImages";
+import { NotionDatabaseResponse } from "@/types/notionTypes";
+import React from "react";
 import 'server-only';
-
-
 
 
 export const notion = new Client({
