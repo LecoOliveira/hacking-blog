@@ -1,6 +1,7 @@
 import { Client } from '@notionhq/client';
 import { downloadImage } from './downloadImages';
-import { NotionDatabaseResponse } from '@/types/notionTypes';
+import { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import { NotionDatabaseResponse, Page } from '@/types/notionTypes';
 import React from 'react';
 import 'server-only';
 
@@ -41,4 +42,36 @@ export const fetchPages = React.cache(async () => {
       date: post.properties.Date.date.start,
     };
   });
+});
+
+export const fetchBySlug = React.cache(async (slug: string) => {
+  const response = await notion.databases.query({
+    database_id: `${process.env.NOTION_DATABASE_ID}`,
+    filter: {
+      property: 'slug',
+      rich_text: {
+        equals: slug,
+      },
+    },
+  });
+
+  const typedResponse = response.results[0] as Page;
+  const cover = `/images/${typedResponse.id}.webp`;
+
+  return {
+    ...typedResponse,
+    cover: cover,
+  };
+});
+
+export const fetchPageBlocks = React.cache(async (pageId: string) => {
+  const response = await notion.blocks.children.list({
+    block_id: pageId,
+  });
+
+  return response.results as BlockObjectResponse[];
+});
+
+export const getUser = React.cache(async (userId: string) => {
+  return notion.users.retrieve({ user_id: userId });
 });
