@@ -20,7 +20,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const title = (array: DataItem[] = titleArray): string => {
     return array.map((item) => item.plain_text).join('');
   };
-  console.log(user);
 
   return (
     <div className="relative mt-12 w-[1000px] place-self-center">
