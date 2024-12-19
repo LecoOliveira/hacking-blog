@@ -26,6 +26,7 @@ export const fetchPages = React.cache(async () => {
     ],
   });
   const typedResponse = response as unknown as NotionDatabaseResponse;
+
   return typedResponse.results.map((post) => {
     const localImagePath = `${post.id}.webp`;
     downloadImage(post.cover.file.url, localImagePath);
