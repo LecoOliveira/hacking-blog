@@ -38,9 +38,9 @@ export default function Header() {
             </svg>
           </form>
         </div>
-        <a className="hover:text-white" href="">
+        <Link className="hover:text-white" href="/blog">
           Posts
-        </a>
+        </Link>
         <a className="hover:text-white" href="">
           Categorias
         </a>

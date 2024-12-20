@@ -48,17 +48,19 @@ const NewsletterForm: React.FC = () => {
           focus:outline-none text-sm"
           type="email"
           id="bd-email"
-          placeholder="Your best email"
+          placeholder="Seu melhor Email"
           {...register('email', {
-            required: 'Email is required',
+            required: 'Preencha com um email válido',
             pattern: {
               value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-              message: 'Invalid email address',
+              message: 'Email inválido',
             },
           })}
         />
-        {errors.email && <span className="error">{errors.email.message}</span>}
       </div>
+      {errors.email && (
+        <span className="error text-xs">{errors.email.message}</span>
+      )}
 
       <button
         className="relative mt-4 w-[120px] text-[12px] px-4 py-1 

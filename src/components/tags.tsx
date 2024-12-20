@@ -7,7 +7,7 @@ type TagsProps = {
   tag: Tag[];
 };
 
-const colorClasses: Record<string, string> = {
+export const colorClasses: Record<string, string> = {
   blue: 'border-blue-200 text-blue-200',
   yellow: 'border-yellow-200 text-yellow-200',
   red: 'border-red-200 text-red-200',
@@ -22,7 +22,7 @@ const colorClasses: Record<string, string> = {
 export default async function Tags({ tag }: TagsProps) {
   return (
     <div className="absolute flex space-x-2 mb-4 -mt-12">
-      {tag.map((t, index) => (
+      {tag?.map((t, index) => (
         <span
           key={index}
           className={`
