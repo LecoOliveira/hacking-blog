@@ -52,7 +52,7 @@ export default function TableContent({ items }: TableContentProps) {
       </h5>
       <div className="">
         <div className="">
-          <ul className="text-slate-700 text-sm leading-6">
+          <ul className="text-slate-100 text-sm leading-6">
             {items.map((item, index) => (
               <li key={index}>
                 <Link
@@ -60,7 +60,7 @@ export default function TableContent({ items }: TableContentProps) {
                   className={`toc-item block py-1 font-medium  ${
                     activeId === item.id
                       ? ' dark:text-blue-500'
-                      : 'dark:text-slate-400'
+                      : 'dark:text-slate-300/60'
                   } 
                     hover:text-slate-900  dark:hover:text-slate-100 `}
                 >

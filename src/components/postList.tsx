@@ -14,12 +14,11 @@ export default function PostList({
   return (
     <Link
       href={`/blog/${slug}`}
-      className="group flex flex-col w-[600px] mb-12"
+      className="group hover:opacity-60 flex flex-col w-[600px] mb-12"
     >
       <Image
         className="width-full h-[220px] object-cover rounded-xl 
-        group-hover:grayscale group-hover:object-none transition-all 
-        duration-300"
+        group-hover:grayscale transition-all duration-300"
         src={cover}
         alt="Imagem de capa do post"
         width={600}
