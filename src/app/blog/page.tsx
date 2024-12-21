@@ -13,7 +13,7 @@ export default async function Page() {
       </h1>
       <section
         className="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-20 
-        w-[350px] sm:w-[600px] md:w-[800px] lg:w-[1000px] mx-auto mt-28"
+        w-11/12 sm:w-[600px] md:w-[800px] lg:w-[1000px] mx-auto mt-20"
       >
         {posts.map(async (post) => (
           <div

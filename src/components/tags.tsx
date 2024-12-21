@@ -21,15 +21,15 @@ export const colorClasses: Record<string, string> = {
 
 export default async function Tags({ tag }: TagsProps) {
   return (
-    <div className="absolute flex space-x-2 mb-4 -mt-12">
+    <div className="relative flex space-x-2 ml-4 mb-4">
       {tag?.map((t, index) => (
         <span
           key={index}
           className={`
                       border
                       ${colorClasses[t.color] || 'text-gray-200'} 
-                      ${colorClasses[t.color] || 'bg-gray-100'} 
-                      text-[9px] font-semibold px-2 py-1 rounded-full 
+                      ${colorClasses[t.color] || 'bg-gray-100'} text-[8px]
+                      sm:text-[9px] font-semibold px-2 py-1 rounded-full 
                       cursor-pointer
                   `}
         >

@@ -43,16 +43,16 @@ export default function TableContent({ items }: TableContentProps) {
   }, [items]);
 
   return (
-    <div className="sticky top-6 z-10 shadow-md">
+    <div className="hidden md:block sticky top-6 z-10">
       <h5
-        className="text-slate-900 font-bold italic mb-4 leading-6 
-        dark:text-slate-100"
+        className="text-slate-900 text-center lg:text-left font-bold 
+        italic mb-4 leading-6 dark:text-slate-100"
       >
         Conteúdo da página
       </h5>
       <div className="">
         <div className="">
-          <ul className="text-slate-100 text-sm leading-6">
+          <ul className="text-slate-100 text-xs lg:text-sm lg:leading-6">
             {items.map((item, index) => (
               <li key={index}>
                 <Link

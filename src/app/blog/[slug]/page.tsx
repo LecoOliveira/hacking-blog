@@ -23,15 +23,23 @@ export default async function Page({ params }: { params: { slug: string } }) {
   };
 
   return (
-    <div className="relative mt-12 w-[1000px] place-self-center">
+    <div
+      className="relative mt-12 min-w-min-[360px] sm:w-[600px] md:w-[800px] 
+      lg:w-[1000px] place-self-center sm:p-4"
+    >
       <Navigation title={title()} />
-      <h1 className="text-center font-extrabold text-4xl m-10">{title()}</h1>
+      <h1
+        className="text-center font-bold text-xl md:text-3xl lg:text-4xl 
+        md:m-10"
+      >
+        {title()}
+      </h1>
       <div
-        className="relative w-[1200px] place-self-center h-[400px] 
-        object-cover mb-16"
+        className="relative w-screen lg:w-[1200px] place-self-center 
+        h-[250px] sm:h-[400px] object-cover mt-4 mb-4 md:mb-16"
       >
         <Image
-          className="relative object-cover rounded-xl "
+          className="relative object-fill md:object-cover rounded-xl "
           src={`${post.cover}`}
           alt="Imagem de capa"
           priority
@@ -53,16 +61,23 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <p className="font-thin text-sm">Ethical Hacker</p>
         </div>
       </div>
-      <p className="ml-6 mb-2 text-xs font-thin tracking-wide">
+      <p className="ml-6 mb-2 text-[10px] sm:text-xs font-thin tracking-wide">
         {`- ${formatarDataEmPortugues(date)} - 
-          ${post.properties['Read Time'].number} Minutos de leitura`}
+          ${post.properties['Read Time'].number} Minutos de leitura -`}
       </p>
-      <div className="relative flex flex-row gap-16">
+      <div
+        className="relative grid grid-cols-1 md:flex flex-row gap-8
+        lg:gap-16"
+      >
         <div
-          className="prose prose-invert text-pretty text-[#d5d5d6]"
+          className="w-11/12 max-w-min-[360px] sm:w-[600px] md:w-[800px] 
+          place-self-center lg:w-full prose prose-invert prose-ul:text-sm 
+          lg:prose-ul:text-base prose-code:text-xs lg:prose-code:text-sm 
+          prose-h2:text-base prose-p:text-sm lg:prose-p:text-base 
+          prose-h1:text-xl md:prose-h1:text-2xl text-pretty text-[#d5d5d6]"
           dangerouslySetInnerHTML={{ __html: html }}
         ></div>
-        <div className="relative mr-0 w-full">
+        <div className="relative mr-0">
           <TableContent items={toc} />
         </div>
       </div>
