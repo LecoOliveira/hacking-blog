@@ -41,7 +41,7 @@ export default function PostList({
         {dataFormatada}{' '}
       </p>
       <p
-        className="text-justify md:text-left text-xs 
+        className="text-justify md:text-left text-sm 
         lg:text-base mt-6 m-2 mb-0"
       >
         {description}

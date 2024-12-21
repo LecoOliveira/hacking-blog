@@ -33,7 +33,7 @@ export default async function Home() {
       </main>
       <section
         className="grid-cols-1 sm:flex flex-row justify-between sm:w-[600px] 
-        lg:w-[1000px] place-self-center mt-20"
+        lg:w-[1000px] place-self-center mt-4 md:mt-20"
       >
         <nav>
           <ul className="w-[350px] lg:w-[600px]">

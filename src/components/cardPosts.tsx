@@ -31,7 +31,12 @@ export default function PostList({
       <p className="font-light ml-2 italic mt-1.5 text-[10px]">
         {dataFormatada}
       </p>
-      <p className="text-xs mt-4 text-pretty m-2 mb-0">{description}</p>
+      <p
+        className="text-justify md:text-left text-sm mt-4
+        text-pretty m-2 mb-0"
+      >
+        {description}
+      </p>
     </Link>
   );
 }
