@@ -5,8 +5,13 @@ export default async function Quote({ quote }: { quote: Props }) {
   const { props } = await quote;
 
   return (
-    <div className="mt-36 text-center">
-      <h2 className="font-semibold italic tracking-tight p-3">FRASE DO DIA</h2>
+    <div className="hidden sm:block mt-36 text-center">
+      <h2
+        className="text-sm lg:text-base font-semibold italic 
+        tracking-tight p-3"
+      >
+        FRASE DO DIA
+      </h2>
       <blockquote className="relative ">
         <svg
           className="absolute -top-6 -start-8 size-16 text-gray-100 
@@ -42,14 +47,14 @@ export default async function Quote({ quote }: { quote: Props }) {
         </svg>
 
         <div className="relative z-10">
-          <cite className="text-gray-800 sm:text-l dark:text-white">
+          <cite className="text-gray-800 text-sm lg:text-base dark:text-white">
             <em>{`"${props.quote}"`}</em>
           </cite>
         </div>
 
         <footer className="mt-6">
           <div
-            className="text-sm font-semibold text-gray-800 
+            className="text-xs lg:text-sm font-semibold text-gray-800 
             dark:text-neutral-400"
           >
             {`${props.author}`}

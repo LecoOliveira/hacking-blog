@@ -32,11 +32,11 @@ export default async function Home() {
         />
       </main>
       <section
-        className="w-[1000px] place-self-center flex flex-row 
-        justify-between mt-20"
+        className="grid-cols-1 sm:flex flex-row justify-between sm:w-[600px] 
+        lg:w-[1000px] place-self-center mt-20"
       >
         <nav>
-          <ul className="w-[600px]">
+          <ul className="w-[350px] lg:w-[600px]">
             {listPosts.map(async (post) => (
               <PostList
                 key={post.slug}
@@ -53,7 +53,10 @@ export default async function Home() {
             ))}
           </ul>
         </nav>
-        <section className="w-[220px] mr-0">
+        <section
+          className="place-self-center sm:place-self-start 
+          w-[150px] lg:w-[220px] mr-0"
+        >
           <AboutMe />
           <Subscription />
           <Quote quote={quote} />

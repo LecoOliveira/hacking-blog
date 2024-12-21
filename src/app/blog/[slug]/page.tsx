@@ -53,7 +53,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <p className="font-thin text-sm">Ethical Hacker</p>
         </div>
       </div>
-      <p className="ml-6 mb-2 text-xs font-thin">
+      <p className="ml-6 mb-2 text-xs font-thin tracking-wide">
         {`- ${formatarDataEmPortugues(date)} - 
           ${post.properties['Read Time'].number} Minutos de leitura`}
       </p>

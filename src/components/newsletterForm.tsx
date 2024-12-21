@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import email from '../../public/mail.svg';
@@ -41,11 +43,11 @@ const NewsletterForm: React.FC = () => {
       onSubmit={handleSubmit(onSubmit)}
     >
       {/* <label htmlFor="bd-email">Enter your email</label> */}
-      <div className="flex flex-row items-center gap-2">
-        <Image className="w-10" src={email} alt="" />
+      <div className="flex flex-row items-center gap-1 lg:gap-2">
+        <Image className="w-10" src={email} alt="ícone de email" />
         <input
           className="block bg-transparent border-b-2 appearance-none 
-          focus:outline-none text-sm"
+          focus:outline-none text-[10.5px] lg:text-sm"
           type="email"
           id="bd-email"
           placeholder="Seu melhor Email"
@@ -59,13 +61,15 @@ const NewsletterForm: React.FC = () => {
         />
       </div>
       {errors.email && (
-        <span className="error text-xs">{errors.email.message}</span>
+        <span className="error text-[9px] lg:text-xs">
+          {errors.email.message}
+        </span>
       )}
 
       <button
-        className="relative mt-4 w-[120px] text-[12px] px-4 py-1 
-        border bg-[#d5d5d6] text-[#0e1018] rounded-lg
-        hover:bg-white font-semibold active:opacity-65"
+        className="relative mt-4 w-[90px] lg:w-[120px] text-[10px] 
+        lg:text-[12px] px-4 py-1 border bg-[#d5d5d6] text-[#0e1018] 
+        rounded-lg hover:bg-white font-semibold active:opacity-65"
         type="submit"
       >
         Subscribe

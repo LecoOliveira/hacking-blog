@@ -14,10 +14,10 @@ export default function PostList({
   return (
     <Link
       href={`/blog/${slug}`}
-      className="group hover:opacity-60 flex flex-col w-[600px] mb-12"
+      className="group hover:opacity-60 flex flex-col lg:w-[600px] mb-12"
     >
       <Image
-        className="width-full h-[220px] object-cover rounded-xl 
+        className="width-full h-[150px] lg:h-[220px] object-cover rounded-xl 
         group-hover:grayscale transition-all duration-300"
         src={cover}
         alt="Imagem de capa do post"
@@ -25,20 +25,31 @@ export default function PostList({
         height={220}
         loading="lazy"
       />
-      <h2 className="text-xl font-semibold italic mt-4 m-auto"> {title} </h2>
+      <h2 className="text-base lg:text-xl font-semibold italic mt-4 m-auto">
+        {' '}
+        {title}{' '}
+      </h2>
       <div
         className="w-[37px] border m-auto border-dashed 
         border-[#d5d5d6]/70 mt-1.5"
       />
-      <p className="text-center font-light italic mt-1.5 text-[11px]">
+      <p
+        className="text-center font-light italic mt-1.5 text-[9px] 
+        lg:text-[11px]"
+      >
         {' '}
         {dataFormatada}{' '}
       </p>
-      <p className="text-base mt-6 m-2 mb-0">{description}</p>
+      <p
+        className="text-justify md:text-left text-xs 
+        lg:text-base mt-6 m-2 mb-0"
+      >
+        {description}
+      </p>
       <div
-        className="h-[1px] w-[500px] self-stretch bg-gradient-to-tr 
-        from-transparent via-neutral-500 to-transparent opacity-25 
-        dark:via-neutral-300 mx-auto my-12"
+        className="h-[1px] w-[300px] lg:w-[500px] self-stretch 
+        bg-gradient-to-tr from-transparent via-neutral-500 to-transparent 
+        opacity-25 dark:via-neutral-300 mx-auto my-12"
       />
     </Link>
   );

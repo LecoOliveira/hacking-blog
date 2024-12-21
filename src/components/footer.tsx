@@ -11,18 +11,21 @@ export default function Footer() {
   return (
     <footer
       className="flex flex-col items-center relative gap-4 inset-x-0 
-      mt-96 bottom-8"
+      mt-80 bottom-8"
     >
       <div
-        className="w-[200px] border m-auto border-dashed 
+        className="w-[140px] sm:w-[200px] border m-auto border-dashed 
         border-[#d5d5d6]/70 mt-1.5 opacity-40"
       />
       <Image
-        className="opacity-40"
+        className="w-32 sm:w-auto opacity-40"
         src={logo}
         alt="Logotipo do blog Hacking BLOG"
       />
-      <div className="opacity-40 font-extralight tracking-wide">
+      <div
+        className="text-xs sm:text-base opacity-40 
+        font-extralight tracking-wide"
+      >
         © Copyrigth 2024 - Alex Rocha
       </div>
       <div className="group flex flex-row gap-2">
