@@ -6,10 +6,10 @@ export default async function Page() {
   const posts = await fetchPages();
 
   return (
-    <section>
-      <h1 className="place-self-center mt-16 -mb-12 text-3xl font-bold italic">
+    <section className="scroll-smooth">
+      <h1 className="place-self-center mt-16 -mb-12 text-3xl font-bold ">
         {' '}
-        BLOG{' '}
+        POSTS{' '}
       </h1>
       <section
         className="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-20 
