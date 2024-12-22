@@ -16,7 +16,7 @@ export default function Post({
       href={`/blog/${slug}`}
       className="group flex hover:opacity-60 transition-all 
         duration-300 flex-col w-[360px] sm:w-[500px] md:w-[600px] 
-        lg:w-[1000px] hover:object-none place-self-center
+        lg:w-[1000px] hover:-translate-y-1 place-self-center
         mt-10 mb-10 md:mb-20 animate-slideUp"
     >
       <Image

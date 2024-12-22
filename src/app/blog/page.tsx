@@ -1,4 +1,5 @@
 import CardPost from '@/components/cardPosts';
+import Navigation from '@/components/navProgress';
 import { colorClasses } from '@/components/tags';
 import { fetchPages } from '@/lib/notion';
 
@@ -6,14 +7,15 @@ export default async function Page() {
   const posts = await fetchPages();
 
   return (
-    <section className="scroll-smooth">
-      <h1 className="place-self-center mt-16 -mb-12 text-3xl font-bold ">
-        {' '}
-        POSTS{' '}
-      </h1>
+    <section
+      className="pt-16 p-4 lg:w-[1000px] place-self-center 
+      scroll-smooth"
+    >
+      <Navigation title="" />
+      <h1 className="place-self-center -mb-12 text-3xl font-bold "> POSTS </h1>
       <section
         className="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-20 
-        w-11/12 sm:w-[600px] md:w-[800px] lg:w-[1000px] mx-auto mt-20"
+        w-11/12 sm:w-[600px] md:w-[800px] lg:w-[1000px] mt-20 place-self-center"
       >
         {posts.map(async (post) => (
           <div
@@ -34,7 +36,7 @@ export default async function Page() {
             />
             <div
               className={`
-                  border absolute hidden lg:flex space-x-2 -mt-28 end-4
+                  border absolute hidden lg:flex space-x-2 -mt-28 end-6
                   ${colorClasses[post.tags.color] || 'text-gray-200'} 
                   ${colorClasses[post.tags.color] || 'bg-gray-100'} 
                   text-[8px] font-semibold px-2 py-1 rounded-full 

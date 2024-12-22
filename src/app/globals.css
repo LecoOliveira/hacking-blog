@@ -7,15 +7,8 @@ html {
 }
 
 :root {
-  --background: #d5d5d6;
-  --foreground: #0e1018;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0e1018;
-    --foreground: #d5d5d6;
-  }
+  --foreground: #d5d5d6;
+  --background: #0e1018;
 }
 
 body {
