@@ -14,8 +14,8 @@ export default async function Quote({ quote }: { quote: Props }) {
       </h2>
       <blockquote className="relative ">
         <svg
-          className="absolute -top-6 -start-8 size-16 text-gray-100 
-          dark:text-neutral-700"
+          className="absolute -top-6 -start-8 size-16
+          text-gray-800"
           width="16"
           height="16"
           viewBox="0 0 16 16"
@@ -47,15 +47,15 @@ export default async function Quote({ quote }: { quote: Props }) {
         </svg>
 
         <div className="relative z-10">
-          <cite className="text-gray-800 text-sm lg:text-base dark:text-white">
+          <cite className="text-sm lg:text-base">
             <em>{`"${props.quote}"`}</em>
           </cite>
         </div>
 
         <footer className="mt-6">
           <div
-            className="text-xs lg:text-sm font-semibold text-gray-800 
-            dark:text-neutral-400"
+            className="text-xs lg:text-sm font-semibold 
+            text-gray-700"
           >
             {`${props.author}`}
           </div>
