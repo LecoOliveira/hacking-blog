@@ -16,7 +16,7 @@ export default async function Home() {
     .slice(0, 3);
 
   return (
-    <section className="scroll-smooth">
+    <section className="scroll-smooth mb-48">
       <main>
         <InitialPhrase />
         <Post

@@ -15,8 +15,7 @@ export default function PostList({
   return (
     <Link
       href={`/blog/${slug}`}
-      className="group flex p-4 flex-col w-full h-[350px] md:h-[300px] mb-12
-      hover:-translate-y-1 transition-all duration-300"
+      className="group flex p-4 flex-col w-full h-[350px] md:h-[300px] mb-12"
     >
       <Image
         className="width-full h-[200px] object-cover rounded-xl 

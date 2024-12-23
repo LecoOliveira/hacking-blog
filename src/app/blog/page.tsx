@@ -28,7 +28,7 @@ export default async function Page(props: {
         {posts.map(async (post) => (
           <div
             key={post.id}
-            className="relative hover:opacity-70 transition-all duration-300"
+            className="relative hover:opacity-70 hover:-translate-y-1 transition-all duration-300"
           >
             <CardPost
               key={post.slug}

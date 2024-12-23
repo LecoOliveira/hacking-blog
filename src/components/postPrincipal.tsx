@@ -49,8 +49,8 @@ export default function Post({
       </p>
       <div
         className="h-[1px] w-[200px] md:w-[400px] lg:w-[800px] self-stretch 
-        bg-gradient-to-tr from-transparent via-neutral-500 to-transparent 
-        opacity-25 dark:via-neutral-200 mx-auto my-16"
+        bg-gradient-to-tr from-transparent via-white to-transparent 
+        opacity-25 mx-auto my-16"
       />
     </Link>
   );
