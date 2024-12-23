@@ -74,7 +74,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
           place-self-center lg:w-full prose prose-invert prose-ul:text-sm 
           lg:prose-ul:text-base prose-code:text-xs lg:prose-code:text-sm 
           prose-h2:text-base prose-p:text-sm lg:prose-p:text-base 
-          prose-h1:text-xl md:prose-h1:text-2xl text-pretty text-[#d5d5d6]"
+          prose-img:w-full prose-figure:text-xs prose-figure:text-center
+          prose-h1:text-xl md:prose-h1:text-2xl text-pretty prose-img:"
           dangerouslySetInnerHTML={{ __html: html }}
         ></div>
         <div className="relative mr-0">

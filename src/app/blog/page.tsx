@@ -1,10 +1,15 @@
 import CardPost from '@/components/cardPosts';
 import Navigation from '@/components/navProgress';
 import { colorClasses } from '@/components/tags';
-import { fetchPages } from '@/lib/notion';
+import { fetchPages, searchPost } from '@/lib/notion';
 
-export default async function Page() {
-  const posts = await fetchPages();
+export default async function Page({
+  searchParams,
+}: {
+  searchParams?: { search?: string };
+}) {
+  const post2 = await fetchPages();
+  const posts = await searchPost(searchParams?.search || '');
 
   return (
     <section
