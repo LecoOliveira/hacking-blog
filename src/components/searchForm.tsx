@@ -1,9 +1,10 @@
 'use client';
 
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { Input } from '@material-tailwind/react';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function SearchForm() {
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
   const pathName = usePathname();
   const { replace } = useRouter();
 
@@ -20,21 +21,28 @@ export default function SearchForm() {
   }
 
   return (
-    <div className="mx-auto max-w-md">
-      <form action="" className="relative mx-auto w-max">
-        <input
+    <div className=" max-w-md">
+      <form action="" className="relative mx-auto w-72">
+        <Input
+          className=""
+          color="white"
           type="search"
-          className="peer cursor-pointer relative z-10 h-8 w-7 
-          rounded-full focus:border ease-in-out focus:duration-500 
-          focus:mr-0 focus:w-[160px] lg:focus:mr-48 lg:focus:w-full 
-          bg-transparent pl-12 outline-none focus:cursor-text focus:pl-10 
-          focus:pr-2 lg:focus:pr-4 text-xs lg:text-sm"
           onChange={handleChange}
+          variant="standard"
+          label="Busque por nome"
+          placeholder=""
+          onPointerEnterCapture={() => {}}
+          onPointerLeaveCapture={() => {}}
+          crossOrigin=""
         />
-        <svg
+        {/* <input
+          type="search"
+          className="bg-transparent border"
+          onChange={handleChange}
+        /> */}
+        {/* <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute inset-y-0 my-auto h-5 lg:h-8 w-12 border-r 
-          border-transparent px-1 lg:px-3"
+          className="absolute inset-y-0 my-auto h-5 lg:h-8 w-12 px-1 lg:px-3"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -45,7 +53,7 @@ export default function SearchForm() {
             strokeLinejoin="round"
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
           />
-        </svg>
+        </svg> */}
       </form>
     </div>
   );

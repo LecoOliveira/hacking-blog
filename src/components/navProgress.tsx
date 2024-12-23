@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Navigation({ title }: { title: string }) {
   return (
     <nav
-      className="place-self-center md:place-self-start mb-8 flex"
+      className="place-self-center md:place-self-start flex"
       aria-label="Breadcrumb"
     >
       <ol
@@ -14,8 +14,7 @@ export default function Navigation({ title }: { title: string }) {
           <Link
             href="/"
             className="inline-flex items-center text-xs sm:text-sm font-medium 
-            text-gray-700 hover:text-blue-600 dark:text-gray-400 
-            dark:hover:text-white"
+            text-gray-400 hover:text-white"
           >
             Home
           </Link>
@@ -39,9 +38,8 @@ export default function Navigation({ title }: { title: string }) {
             </svg>
             <Link
               href="/blog"
-              className="ms-1 text-xs sm:text-sm font-medium text-gray-700
-              hover:text-blue-600 md:ms-2 dark:text-gray-400 
-              dark:hover:text-white"
+              className="ms-1 text-xs sm:text-sm font-medium 
+              md:ms-2 text-gray-400 hover:text-white"
             >
               Blog
             </Link>
@@ -66,7 +64,7 @@ export default function Navigation({ title }: { title: string }) {
             </svg>
             <span
               className="ms-1 text-xs sm:text-sm font-medium 
-              text-gray-500 md:ms-2 dark:text-gray-400"
+              text-gray-400 md:ms-2"
             >
               {`${title}`}
             </span>

@@ -1,14 +1,14 @@
+/* eslint-disable max-len */
 import CardPost from '@/components/cardPosts';
 import Navigation from '@/components/navProgress';
+import SearchForm from '@/components/searchForm';
 import { colorClasses } from '@/components/tags';
-import { fetchPages, searchPost } from '@/lib/notion';
+import { searchPost } from '@/lib/notion';
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams?: { search?: string };
+export default async function Page(props: {
+  searchParams?: Promise<{ search?: string }>;
 }) {
-  const post2 = await fetchPages();
+  const searchParams = await props.searchParams;
   const posts = await searchPost(searchParams?.search || '');
 
   return (
@@ -16,7 +16,10 @@ export default async function Page({
       className="pt-16 p-4 lg:w-[1000px] place-self-center 
       scroll-smooth"
     >
-      <Navigation title="" />
+      <div className="flex flex-row justify-between">
+        <Navigation title="" />
+        <SearchForm />
+      </div>
       <h1 className="place-self-center -mb-12 text-3xl font-bold "> POSTS </h1>
       <section
         className="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-20 
@@ -35,20 +38,20 @@ export default async function Page({
                   : post.cover
               }
               title={post.title}
-              data={post.date}
+              data={post.date || ''}
               description={post.description}
               slug={post.slug}
             />
             <div
               className={`
                   border absolute hidden lg:flex space-x-2 -mt-28 end-6
-                  ${colorClasses[post.tags.color] || 'text-gray-200'} 
-                  ${colorClasses[post.tags.color] || 'bg-gray-100'} 
+                  ${post.tags ? colorClasses[post.tags.color] || 'text-gray-200' : 'text-gray-200'} 
+                  ${post.tags ? colorClasses[post.tags.color] || 'bg-gray-100' : 'bg-gray-100'} 
                   text-[8px] font-semibold px-2 py-1 rounded-full 
                   cursor-pointer
               `}
             >
-              {`#${post.tags.name}`}
+              {post.tags ? `#${post.tags.name}` : ''}
             </div>
           </div>
         ))}

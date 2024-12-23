@@ -89,7 +89,7 @@ export const searchPost = async (query: string) => {
     const response = await notion.search({
       query: query,
       start_cursor: nextCursor || undefined,
-      page_size: 4,
+      page_size: 2,
       filter: {
         value: 'page',
         property: 'object',
@@ -105,48 +105,45 @@ export const searchPost = async (query: string) => {
     nextCursor = response.next_cursor;
   }
 
-  const mappedResults = results.map((post): Page => {
+  const mappedResults = results.map((post) => {
     const localImagePath = `${post.id}.webp`;
-    downloadImage(post.cover?.file?.url || '', localImagePath);
+    const coverUrl =
+      post.cover && post.cover.type === 'file' ? post.cover.file.url : '';
+    downloadImage(coverUrl, localImagePath);
+
+    const title =
+      post.properties.Title?.type === 'title'
+        ? post.properties.Title.title.map((str) => str.plain_text).join('')
+        : '';
+    const slug =
+      post.properties.slug?.type === 'rich_text'
+        ? post.properties.slug.rich_text[0]?.plain_text || ''
+        : '';
+    const tags =
+      post.properties.Tags?.type === 'multi_select'
+        ? post.properties.Tags.multi_select[0] || null
+        : null;
+    const description =
+      post.properties.Description?.type === 'rich_text'
+        ? post.properties.Description.rich_text
+            .map((text) => text.plain_text)
+            .join('')
+        : '';
+    const date =
+      post.properties.Date?.type === 'date'
+        ? post.properties.Date.date?.start || null
+        : null;
 
     return {
       id: post.id,
-      title: post.properties.Title.title.map((str) => str.plain_text).join(''),
-      slug: post.properties.slug.rich_text[0]?.plain_text || '',
-      tags: post.properties.Tags?.multi_select?.[0] || null,
-      cover: post.cover?.file?.url || '',
-      description: post.properties.Description.rich_text
-        .map((text) => text.plain_text)
-        .join(''),
-      date: post.properties.Date.date?.start || null,
+      title,
+      slug,
+      tags,
+      cover: coverUrl,
+      description,
+      date,
     };
   });
 
   return mappedResults;
 };
-
-// const posts = await searchPost('');
-// posts.map((post) => {
-//   if ('parent' in post && post.parent?.type === 'database_id') {
-//     console.log(post);
-//   }
-// });
-(async () => {
-  const query = '';
-  const allResults = await searchPost(query);
-
-  // allResults.map((post) => {
-  //   if (
-  //     'parent' in post &&
-  //     post.parent &&
-  //     typeof post.parent === 'object' &&
-  //     'type' in post.parent &&
-  //     post.parent.type === 'database_id'
-  //   ) {
-  //     console.log(post);
-  //   }
-  // });
-
-  console.log(`Total de resultados: ${allResults.length}`);
-  // console.log(allResults);
-})();
