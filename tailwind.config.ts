@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
-import withMT from '@material-tailwind/react/utils/withMT';
+// import withMT from '@material-tailwind/react/utils/withMT';
 
-module.exports = withMT({
+module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -18,6 +18,10 @@ module.exports = withMT({
           '0%': { transform: 'translateY(100px)' },
           '100%': { transform: 'translateY(0)' },
         },
+        slideLeft: {
+          '0%': { transform: 'translateX(100px)' },
+          '100%': { transform: 'translateY(0)' },
+        },
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
@@ -26,6 +30,7 @@ module.exports = withMT({
       animation: {
         fadeIn: 'fadeIn 0.75s ease-in-out',
         slideUp: 'slideUp 0.75s ease-out',
+        slideLeft: 'slideLeft 0.75s ease-out',
       },
       colors: {
         background: 'var(--background)',
@@ -37,4 +42,4 @@ module.exports = withMT({
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     require('@tailwindcss/typography'),
   ],
-}) as Config;
+} as Config;

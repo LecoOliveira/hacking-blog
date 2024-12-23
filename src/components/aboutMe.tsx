@@ -1,12 +1,14 @@
 import Image from 'next/image';
 // eslint-disable-next-line max-len
 import profilePicture from '../../public/profilePicture/IMG_20221210_151515_627.jpg';
+import Link from 'next/link';
 
 export default function AboutMe() {
   return (
-    <div
+    <Link
+      href={'/about'}
       className="hidden sm:flex flex-col justify-center 
-      items-center cursor-pointer"
+      items-center cursor-pointer hover:opacity-70"
     >
       <Image
         className="w-[100px] lg:w-[150px] rounded-full"
@@ -14,19 +16,19 @@ export default function AboutMe() {
         alt="Foto de perfil"
       />
       <h2 className="mt-3 text-sm lg:text-base font-semibold italic">
-        {' '}
-        SOBRE MIM{' '}
+        SOBRE MIM
       </h2>
       <div
         className="w-[37px] border border-dashed 
         border-[#d5d5d6]/70 m-auto mt-1.5 mb-4"
       />
-      <p className="tracking-tight text-[10px] lg:text-[13px] text-center">
-        Lorem ipsum dolor sit amet consectetur. Fringilla facilisi amet ut
-        venenatis at. Pulvinar pretium magna magna aliquet. Odio eu urna
-        dignissim at urna adipiscing risus. Sociis felis aliquam placerat sed
-        ut. Nibh in metus amet accumsan.
+      <p
+        className="tracking-tight font-extralight text-[10px] lg:text-[13px] 
+        text-center"
+      >
+        Hacker, desenvolvedor e curioso por natureza. Se a gente não sabe, a
+        gente aprende!
       </p>
-    </div>
+    </Link>
   );
 }

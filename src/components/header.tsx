@@ -18,7 +18,7 @@ export default function Header() {
         <a className="hover:text-white text-sm lg:text-base" href="/writeups">
           WriteUps
         </a>
-        <a className="hover:text-white text-sm lg:text-base" href="">
+        <a className="hover:text-white text-sm lg:text-base" href="/about">
           Sobre
         </a>
       </div>
