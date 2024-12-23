@@ -14,7 +14,7 @@ export default async function Page(props: {
   return (
     <section
       className="pt-16 p-4 lg:w-[1000px] place-self-center 
-      scroll-smooth"
+      scroll-smooth mb-96"
     >
       <div className="flex flex-row justify-between mb-16 mt-4">
         <Navigation title="" />

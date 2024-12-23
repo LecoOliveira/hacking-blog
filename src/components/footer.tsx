@@ -10,8 +10,8 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer
-      className="flex flex-col items-center relative gap-4 inset-x-0 
-      mt-80 bottom-8"
+      className="flex flex-col items-center relative gap-4 inset-x-0 mt-auto
+      bottom-8"
     >
       <div
         className="w-[140px] sm:w-[200px] border m-auto border-dashed 

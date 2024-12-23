@@ -25,7 +25,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <div
       className="relative mt-12 min-w-min-[360px] sm:w-[600px] 
-      md:w-[800px] lg:w-[1000px] place-self-center sm:p-4"
+      md:w-[800px] lg:w-[1000px] place-self-center sm:p-4 mb-96"
     >
       <Navigation title={title()} />
       <h1

@@ -32,7 +32,7 @@ export default function RootLayout({
           maximum-scale=1.0,user-scalable=0"
         />
       </head>
-      <body>
+      <body className="flex flex-col min-h-screen">
         <Header />
         {children}
         <Footer />
