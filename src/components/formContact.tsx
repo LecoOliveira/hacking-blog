@@ -1,3 +1,5 @@
+import { sendEmail } from '@/lib/sendEmail';
+
 export default function FormContact() {
   return (
     <div className="mb-32">
@@ -7,6 +9,7 @@ export default function FormContact() {
         opacity-25 mx-auto -mt-60 mb-24"
       />
       <form
+        action={sendEmail}
         className="flex flex-col items-center justify-center w-[800px]
         h-full m-auto"
       >
@@ -19,6 +22,7 @@ export default function FormContact() {
         </p>
         <div className="flex flex-row w-full items-center justify-between">
           <input
+            name="nome"
             type="text"
             placeholder="Nome"
             className="w-[395px] h-[40px] border border-white/10 
@@ -27,6 +31,7 @@ export default function FormContact() {
           />
           <input
             type="email"
+            name="email"
             placeholder="Email"
             className="w-[395px] h-[40px] border border-white/10
             rounded-md p-2 mb-4 bg-transparent focus:outline-none 
@@ -35,9 +40,11 @@ export default function FormContact() {
         </div>
         <textarea
           placeholder="Mensagem"
+          name="texto"
           className="w-full h-[250px] border border-white/10 
           rounded-md p-2 mb-4 bg-transparent focus:outline-none 
           placeholder:text-white/50 placeholder:text-sm"
+          required
         />
         <button
           type="submit"
