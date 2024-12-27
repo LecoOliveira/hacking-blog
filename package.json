@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "git pull && npm install && npm run build && pm2 restart hacking-blog"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
