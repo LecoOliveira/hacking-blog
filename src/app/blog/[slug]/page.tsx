@@ -8,7 +8,9 @@ import { formatarDataEmPortugues } from '@/lib/utils';
 import { DataItem } from '@/types/notionTypes';
 import Image from 'next/image';
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({
+  params,
+}: Promise<{ params: { slug: string } }>) {
   const { slug } = await params;
   const post = await fetchBySlug(slug);
   const blocks = await fetchPageBlocks(post.id);
