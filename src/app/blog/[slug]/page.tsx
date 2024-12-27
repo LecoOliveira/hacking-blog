@@ -8,10 +8,15 @@ import { formatarDataEmPortugues } from '@/lib/utils';
 import { DataItem } from '@/types/notionTypes';
 import Image from 'next/image';
 
-export default async function Page({
-  params,
-}: Promise<{ params: { slug: string } }>) {
-  const { slug } = await params;
+interface PageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+export default async function Page(props: PageProps) {
+  const params = await props.params;
+  const { slug } = params;
   const post = await fetchBySlug(slug);
   const blocks = await fetchPageBlocks(post.id);
   const { html, toc } = await processBlocks(blocks);
