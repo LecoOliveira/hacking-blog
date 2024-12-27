@@ -9,7 +9,12 @@ export default function Header() {
       mt-8 mx-auto justify-center md:justify-between"
     >
       <Link href={'/'}>
-        <Image className="w-48 lg:w-56" src={logo} alt="Logotipo do blog" />
+        <Image
+          className="w-48 lg:w-56"
+          src={logo}
+          alt="Logotipo do blog"
+          priority
+        />
       </Link>
       <div className="hidden sm:flex flex-row gap-2 lg:gap-3 items-center">
         <Link className="hover:text-white text-sm lg:text-base" href="/blog">

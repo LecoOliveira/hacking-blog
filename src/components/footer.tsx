@@ -21,6 +21,7 @@ export default function Footer() {
         className="w-32 sm:w-auto opacity-40"
         src={logo}
         alt="Logotipo do blog Hacking BLOG"
+        priority
       />
       <div
         className="text-xs sm:text-base opacity-40 

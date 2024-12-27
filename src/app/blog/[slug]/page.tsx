@@ -43,7 +43,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
           src={`${post.cover}`}
           alt="Imagem de capa"
           priority
-          loading="eager"
           fill
         />
       </div>

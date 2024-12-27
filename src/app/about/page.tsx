@@ -36,9 +36,9 @@ export default function Page() {
             className="p-12 sm:p-0 sm:m-8 w-100px h-100px sm:ml-24 lg:w-[430px] 
             lg:h-[430px] rounded-full animate-slideUp
             sm:animate-slideLeft"
-            quality={100}
             src={image}
             alt="Imagem de perfil"
+            priority
           />
         </section>
       </div>

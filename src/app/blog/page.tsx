@@ -52,7 +52,9 @@ export default async function HomePage(props: {
                     ? post.cover
                     : ''
               }
-              title={post.properties.Title.title[0].plain_text}
+              title={post.properties.Title.title
+                .map((str) => str.plain_text)
+                .join('')}
               data={post.properties.Date.date.start || ''}
               description={post.properties.Description.rich_text[0].plain_text}
               slug={post.properties.slug.rich_text[0].plain_text}
