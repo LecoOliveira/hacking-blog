@@ -13,8 +13,10 @@ export default function SearchForm() {
 
     if (string) {
       params.set('search', string);
+      params.set('page', '1');
     } else {
       params.delete('search');
+      params.delete('page');
     }
     replace(`${pathName}?${params.toString()}`);
   }

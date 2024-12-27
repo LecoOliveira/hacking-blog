@@ -28,6 +28,7 @@ export const fetchPages = React.cache(async () => {
       },
     ],
   });
+
   const typedResponse = response as unknown as NotionDatabaseResponse;
 
   return typedResponse.results.map((post) => {
@@ -100,7 +101,15 @@ export const searchPost = async (query: string) => {
         return 'parent' in result && result.parent.type === 'database_id';
       },
     );
-    results.push(...filteredResults);
+    const livePosts = filteredResults.filter((post) => {
+      const status =
+        post.properties.Status?.type === 'status'
+          ? post.properties.Status.status?.name
+          : '';
+      return status === 'Live'; // Filtra posts com Status "Live"
+    });
+
+    results.push(...livePosts);
     hasMore = response.has_more;
     nextCursor = response.next_cursor;
   }

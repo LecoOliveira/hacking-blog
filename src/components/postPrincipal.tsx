@@ -17,7 +17,7 @@ export default function Post({
       className="group flex hover:opacity-60 transition-all 
         duration-300 flex-col w-[360px] sm:w-[500px] md:w-[600px] 
         lg:w-[1000px] hover:-translate-y-1 place-self-center
-        mt-10 mb-10 md:mb-20 animate-slideUp"
+        mt-10 mb-10 md:mb-20 animate-slideUp active:scale-95"
     >
       <Image
         className="width-full lg:h-[300px] object-cover rounded-xl 
