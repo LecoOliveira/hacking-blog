@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Navigation({ title }: { title: string }) {
   return (
     <nav
-      className="place-self-center md:place-self-start flex"
+      className="place-self-center md:place-self-start flex mb-4 lg:mb-0"
       aria-label="Breadcrumb"
     >
       <ol

@@ -31,8 +31,8 @@ export default async function Page(props: PageProps) {
 
   return (
     <div
-      className="relative mt-12 min-w-min-[360px] sm:w-[600px] 
-      md:w-[800px] lg:w-[1000px] place-self-center sm:p-4 mb-96"
+      className="relative grid mt-12 min-w-min-[360px] sm:w-[600px] 
+      md:w-[800px] lg:w-[1000px] mx-auto sm:p-4 mb-96"
     >
       <Navigation title={title()} />
       <h1
@@ -41,17 +41,19 @@ export default async function Page(props: PageProps) {
       >
         {title()}
       </h1>
-      <div
-        className="relative w-screen lg:w-[1200px] place-self-center 
-        h-[250px] sm:h-[400px] object-cover mt-4 mb-4 md:mb-16"
-      >
-        <Image
-          className="relative object-fill md:object-cover rounded-xl "
-          src={`${post.cover}`}
-          alt="Imagem de capa"
-          priority
-          fill
-        />
+      <div className="grid grid-cols-1">
+        <div
+          className="relative w-screen lg:w-[1200px] place-self-center 
+          h-[250px] sm:h-[400px] object-cover mt-4 mb-4 md:mb-16"
+        >
+          <Image
+            className="relative object-fill md:object-cover rounded-xl "
+            src={`${post.cover}`}
+            alt="Imagem de capa"
+            priority
+            fill
+          />
+        </div>
       </div>
       <Tags tag={tag} />
       <div className="ml-4 mb-4 flex flex-row">

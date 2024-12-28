@@ -23,7 +23,7 @@ export default function SearchForm() {
 
   return (
     <div className=" max-w-md">
-      <form className="flex items-center w-56 lg:w-72 h-4 mx-auto">
+      <form className="flex items-center w-40 sm:w-56 lg:w-72 h-4 mx-auto">
         <label htmlFor="simple-search" className="sr-only">
           Search
         </label>
