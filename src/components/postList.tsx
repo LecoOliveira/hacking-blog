@@ -15,7 +15,7 @@ export default function PostList({
     <Link
       href={`/blog/${slug}`}
       className="group hover:opacity-60 flex flex-col lg:w-[600px] 
-      mb-12 hover:-translate-y-1 transition-all duration-300 active:scale-95"
+      sm:mb-12 hover:-translate-y-1 transition-all duration-300 active:scale-95"
     >
       <Image
         className="width-full h-[150px] lg:h-[220px] object-cover rounded-xl 
@@ -42,7 +42,7 @@ export default function PostList({
         {dataFormatada}{' '}
       </p>
       <p
-        className="text-justify md:text-left text-sm 
+        className="md:text-left text-sm line-clamp-2 sm:line-clamp-none
         lg:text-base mt-6 m-2 mb-0"
       >
         {description}

@@ -15,9 +15,9 @@ export default function Post({
     <Link
       href={`/blog/${slug}`}
       className="group flex hover:opacity-60 transition-all 
-        duration-300 flex-col w-[360px] sm:w-[500px] md:w-[600px] 
+        duration-300 flex-col w-11/12 sm:w-[500px] md:w-[600px] 
         lg:w-[1000px] hover:-translate-y-1 place-self-center
-        mt-10 mb-10 md:mb-20 animate-slideUp active:scale-95"
+        sm:mt-10 sm:mb-10 md:mb-20 animate-slideUp active:scale-95"
     >
       <Image
         className="width-full lg:h-[300px] object-cover rounded-xl 
@@ -42,8 +42,8 @@ export default function Post({
         {dataFormatada}
       </p>
       <p
-        className="text-justify md:text-left text-sm md:text-base 
-        mt-4 md:mt-10 m-2 mb-0"
+        className="line-clamp-2 sm:line-clamp-none md:text-left text-sm 
+        md:text-base mt-4 md:mt-10 m-2 mb-0"
       >
         {description}
       </p>

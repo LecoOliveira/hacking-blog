@@ -35,7 +35,7 @@ export default async function Home() {
         className="grid-cols-1 sm:flex flex-row justify-between sm:w-[600px] 
         lg:w-[1000px] mx-auto mt-4 md:mt-20"
       >
-        <nav>
+        <nav className="place-self-center sm:place-self-start">
           <ul className="w-[350px] lg:w-[600px]">
             {listPosts.map(async (post) => (
               <PostList
