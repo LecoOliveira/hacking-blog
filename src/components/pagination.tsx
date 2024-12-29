@@ -19,7 +19,7 @@ export default function PaginationPage({
           <Link
             className="opacity-65 p-1 rounded hover:text-[--background] 
             hover:bg-[--foreground] active:bg-slate-400"
-            href={`/blog2?page=${currentPage - 1}`}
+            href={`/blog?page=${currentPage - 1}`}
           >
             <svg
               className="w-5 h-5"
@@ -42,7 +42,7 @@ export default function PaginationPage({
           <Link
             className="opacity-65 p-1 rounded hover:text-[--background] 
             hover:bg-[--foreground] active:bg-slate-400"
-            href={`/blog2?page=${currentPage + 1}`}
+            href={`/blog?page=${currentPage + 1}`}
           >
             <svg
               className="w-5 h-5"
