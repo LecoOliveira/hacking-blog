@@ -47,11 +47,6 @@ export default function Post({
       >
         {description}
       </p>
-      <div
-        className="h-[1px] w-[200px] md:w-[400px] lg:w-[800px] self-stretch 
-        bg-gradient-to-tr from-transparent via-white to-transparent 
-        opacity-25 mx-auto my-16"
-      />
     </Link>
   );
 }

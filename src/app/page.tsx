@@ -30,6 +30,11 @@ export default async function Home() {
           description={mainPost.description}
           slug={mainPost.slug}
         />
+        <div
+          className="h-[1px] w-[200px] md:w-[400px] lg:w-[800px] self-stretch 
+          bg-gradient-to-tr from-transparent via-white to-transparent 
+          opacity-25 mx-auto my-16"
+        />
       </main>
       <section
         className="grid-cols-1 sm:flex flex-row justify-between sm:w-[600px] 
@@ -38,18 +43,24 @@ export default async function Home() {
         <nav className="place-self-center sm:place-self-start">
           <ul className="w-[350px] lg:w-[600px]">
             {listPosts.map(async (post) => (
-              <PostList
-                key={post.slug}
-                cover={
-                  `/images/${post.id}.webp`
-                    ? `/images/${post.id}.webp`
-                    : post.cover
-                }
-                title={post.title}
-                data={post.date}
-                description={post.description}
-                slug={post.slug}
-              />
+              <div key={post.slug} className="mb-6">
+                <PostList
+                  cover={
+                    `/images/${post.id}.webp`
+                      ? `/images/${post.id}.webp`
+                      : post.cover
+                  }
+                  title={post.title}
+                  data={post.date}
+                  description={post.description}
+                  slug={post.slug}
+                />
+                <div
+                  className="h-[1px] w-[300px] lg:w-[500px] self-stretch 
+                  bg-gradient-to-tr from-transparent via-white to-transparent 
+                  opacity-25 mx-auto my-12"
+                />
+              </div>
             ))}
           </ul>
         </nav>

@@ -1,6 +1,37 @@
+'use client';
+
 import { sendEmail } from '@/lib/sendEmail';
+import { useRef, useState } from 'react';
+import AlertComponent from './alert';
 
 export default function FormContact() {
+  const [result, setResult] = useState<{
+    success: boolean;
+    message: string;
+  } | null>(null);
+  const [isPending, setIsPending] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSendEmail = async (formData: FormData) => {
+    setIsPending(true);
+    const response = await sendEmail(null, formData);
+    setResult(response);
+    setIsPending(false);
+  };
+
+  const handleCloseAlert = () => {
+    setResult(null);
+  };
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const formData = new FormData(event.target as HTMLFormElement);
+    await handleSendEmail(formData);
+    if (formRef.current) {
+      formRef.current.reset();
+    }
+  };
+
   return (
     <div className="mb-32">
       <div
@@ -9,10 +40,11 @@ export default function FormContact() {
         opacity-25 mx-auto mt-32 mb-24"
       />
       <form
-        action={sendEmail}
+        onSubmit={handleSubmit}
         className="flex flex-col items-center justify-center w-[340px] 
         sm:w-[500px] md:w-[700px] lg:w-[800px]
         h-full m-auto"
+        ref={formRef}
       >
         <h1 className="text-2xl sm:text-3xl font-semibold text-center mb-8">
           Entre em contato
@@ -52,14 +84,24 @@ export default function FormContact() {
           required
         />
         <button
+          disabled={isPending}
           type="submit"
           className="w-[120px] sm:w-[200px] md:w-[300px] h-[40px] 
           bg-[#d5d5d6] text-[#0e1018] 
           font-semibold hover:bg-opacity-70
           rounded-md mt-4"
         >
-          Enviar
+          {isPending ? 'Enviando...' : 'Enviar'}
         </button>
+        {result !== null && result !== undefined && (
+          <div className="mt-4 animate-fadeIn">
+            <AlertComponent
+              message={result.message}
+              severity={result.success ? 'success' : 'error'}
+              onClose={handleCloseAlert}
+            />
+          </div>
+        )}
       </form>
     </div>
   );

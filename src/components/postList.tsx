@@ -47,11 +47,6 @@ export default function PostList({
       >
         {description}
       </p>
-      <div
-        className="h-[1px] w-[300px] lg:w-[500px] self-stretch 
-        bg-gradient-to-tr from-transparent via-white to-transparent 
-        opacity-25 mx-auto my-12"
-      />
     </Link>
   );
 }
