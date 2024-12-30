@@ -33,7 +33,7 @@ export default function PostList({
         <h2 className="ml-2 text-base lg:text-xl font-semibold italic">
           {title}
         </h2>
-        <TagCard tag={tag} cor={cor} />
+        <TagCard tag={tag || ''} cor={cor || ''} />
       </div>
       <p
         className="ml-2 font-light italic mt-1.5 text-[9px] 
