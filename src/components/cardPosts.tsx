@@ -34,7 +34,7 @@ export default function CardPost({
       />
       <div className="flex flex-row items-center justify-between mt-4">
         <h2 className="text-sm ml-2 font-semibold italic "> {title} </h2>
-        <TagCard tag={tag} cor={cor} />
+        <TagCard tag={tag || ''} cor={cor || ''} />
       </div>
       <p className="font-light ml-2 italic mt-1.5 text-[10px]">
         {dataFormatada}

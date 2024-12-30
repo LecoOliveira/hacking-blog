@@ -10,11 +10,33 @@ import Image from 'next/image';
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 // eslint-disable-next-line max-len
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import { ResolvingMetadata } from 'next';
 
 interface PageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata(
+  { params }: PageProps,
+  parent: ResolvingMetadata,
+) {
+  const { slug } = await params;
+  const post = await fetchBySlug(slug);
+  const previousImages = (await parent).openGraph?.images || [];
+  const titleArray = post.properties.Title.title;
+  const title = (array: DataItem[] = titleArray): string => {
+    return array.map((item) => item.plain_text).join('');
+  };
+
+  return {
+    title: title(),
+    description: post.properties.Description.rich_text[0].plain_text,
+    openGraph: {
+      images: [post.cover, ...previousImages],
+    },
+  };
 }
 
 export default async function Page(props: PageProps) {
