@@ -2,6 +2,7 @@ import { formatarDataEmPortugues } from '@/lib/utils';
 import { PostProps } from '@/types/notionTypes';
 import Image from 'next/image';
 import Link from 'next/link';
+// import TagCard from './tagCard';
 
 export default function Post({
   cover,
@@ -31,10 +32,9 @@ export default function Post({
       <h2 className="text-lg md:text-2xl font-semibold italic mt-4 m-auto">
         {title}
       </h2>
-      <div
-        className="w-[37px] border m-auto border-dashed
-      border-[#d5d5d6]/70 mt-1.5"
-      ></div>
+      {/* <div className="m-auto">
+        <TagCard tag={tag} cor={cor} />
+      </div> */}
       <p
         className="text-center font-light italic mt-1.5 
         text-[9px] sm:text-[11px]"
@@ -42,8 +42,8 @@ export default function Post({
         {dataFormatada}
       </p>
       <p
-        className="line-clamp-2 sm:line-clamp-none md:text-left text-sm 
-        md:text-base mt-4 md:mt-10 m-2 mb-0"
+        className="line-clamp-2 sm:line-clamp-none text-center 
+        text-sm md:text-base mt-4 md:mt-10 m-2 mb-0"
       >
         {description}
       </p>

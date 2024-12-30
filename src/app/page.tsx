@@ -20,6 +20,8 @@ export default async function Home() {
       <main className="grid">
         <InitialPhrase />
         <Post
+          cor={mainPost.tags.color}
+          tag={mainPost.tags.name}
           cover={
             `/images/${mainPost.id}.webp`
               ? `/images/${mainPost.id}.webp`
@@ -45,6 +47,8 @@ export default async function Home() {
             {listPosts.map(async (post) => (
               <div key={post.slug} className="mb-6">
                 <PostList
+                  cor={post.tags.color}
+                  tag={post.tags.name}
                   cover={
                     `/images/${post.id}.webp`
                       ? `/images/${post.id}.webp`

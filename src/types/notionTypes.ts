@@ -185,6 +185,8 @@ export interface PostProps {
   data: string;
   description: string;
   slug: string;
+  tag: string;
+  cor: string;
 }
 
 export interface ReadTime {

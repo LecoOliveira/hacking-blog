@@ -7,6 +7,9 @@ import { processBlocks } from '@/lib/notionProcessor';
 import { formatarDataEmPortugues } from '@/lib/utils';
 import { DataItem } from '@/types/notionTypes';
 import Image from 'next/image';
+import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
+// eslint-disable-next-line max-len
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 
 interface PageProps {
   params: Promise<{
@@ -44,7 +47,7 @@ export default async function Page(props: PageProps) {
       <div className="grid grid-cols-1">
         <div
           className="relative w-screen lg:w-[1200px] place-self-center 
-          h-[250px] sm:h-[400px] object-cover mt-4 mb-4 md:mb-16"
+          h-[250px] sm:h-[400px] object-cover mt-4 mb-4 md:mb-12"
         >
           <Image
             className="relative object-fill md:object-cover rounded-xl "
@@ -69,10 +72,21 @@ export default async function Page(props: PageProps) {
           <p className="font-thin text-sm">Ethical Hacker</p>
         </div>
       </div>
-      <p className="ml-6 mb-2 text-[10px] sm:text-xs font-thin tracking-wide">
-        {`- ${formatarDataEmPortugues(date)} - 
-          ${post.properties['Read Time'].number} Minutos de leitura -`}
-      </p>
+      <div
+        className="flex flex-row ml-4 mb-2 text-[10px] sm:text-xs font-thin 
+        tracking-wide items-center"
+      >
+        <CalendarMonthOutlinedIcon
+          className="inline mr-1 opacity-50"
+          viewBox="0 0 28 28"
+        />
+        {`${formatarDataEmPortugues(date)}`}
+        <AccessTimeOutlinedIcon
+          className="ml-2 inline mr-1 opacity-50"
+          viewBox="0 0 28 28"
+        />
+        <p>{`${post.properties['Read Time'].number} Minutos de leitura`}</p>
+      </div>
       <div
         className="relative grid grid-cols-1 md:flex flex-row gap-8
         lg:gap-16"
@@ -81,9 +95,11 @@ export default async function Page(props: PageProps) {
           className="w-11/12 max-w-min-[360px] sm:w-[600px] md:w-[800px] 
           place-self-center lg:w-full prose prose-invert prose-ul:text-sm 
           lg:prose-ul:text-base prose-code:text-xs lg:prose-code:text-sm 
-          prose-h2:text-base prose-p:text-sm lg:prose-p:text-base 
+          prose-h2:text-base prose-p:text-sm lg:prose-p:text-sm 
           prose-img:w-full prose-figure:text-xs prose-figure:text-center
-          prose-h1:text-xl md:prose-h1:text-2xl text-pretty prose-img:"
+          prose-h1:text-xl md:prose-h1:text-2xl text-pretty prose-img:
+          prose-img:rounded-lg prose-img:drop-shadow-lg prose-img:object-cover
+          prose-p:text-[--foreground] prose-headings:text-[--foreground]"
           dangerouslySetInnerHTML={{ __html: html }}
         ></div>
         <div className="relative mr-0">

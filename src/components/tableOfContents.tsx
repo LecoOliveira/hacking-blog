@@ -44,10 +44,7 @@ export default function TableContent({ items }: TableContentProps) {
 
   return (
     <div className="hidden md:block sticky top-6 z-10">
-      <h5
-        className="text-center lg:text-left font-bold 
-        italic mb-4 leading-6"
-      >
+      <h5 className="text-center lg:text-left font-semibold mb-4 leading-6">
         Conteúdo da página
       </h5>
       <div className="">
@@ -57,8 +54,8 @@ export default function TableContent({ items }: TableContentProps) {
               <li key={index}>
                 <Link
                   href={`#${item.id}`}
-                  className={`toc-item block py-1 font-medium  ${
-                    activeId === item.id ? 'text-blue-500' : 'text-gray-500'
+                  className={`toc-item block py-1 font-normal ${
+                    activeId === item.id ? 'text-blue-300' : 'text-white/50'
                   } 
                     hover:text-white`}
                 >

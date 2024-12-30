@@ -17,13 +17,22 @@ export default function Header() {
         />
       </Link>
       <div className="hidden sm:flex flex-row gap-2 lg:gap-3 items-center">
-        <Link className="hover:text-white text-sm lg:text-base" href="/blog">
+        <Link
+          className="hover:text-white text-sm lg:text-base font-medium"
+          href="/blog"
+        >
           Posts
         </Link>
-        <a className="hover:text-white text-sm lg:text-base" href="/writeups">
+        <a
+          className="hover:text-white text-sm lg:text-base font-medium"
+          href="/writeups"
+        >
           WriteUps
         </a>
-        <a className="hover:text-white text-sm lg:text-base" href="/about">
+        <a
+          className="hover:text-white text-sm lg:text-base font-medium"
+          href="/about"
+        >
           Sobre
         </a>
       </div>

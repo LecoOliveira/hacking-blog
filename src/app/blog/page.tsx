@@ -2,7 +2,6 @@ import CardPost from '@/components/cardPosts';
 import Navigation from '@/components/navProgress';
 import PaginationPage from '@/components/pagination';
 import SearchForm from '@/components/searchForm';
-import { colorClasses } from '@/components/tags';
 import { Page } from '@/types/notionTypes';
 import axios from 'axios';
 
@@ -37,17 +36,15 @@ export default async function HomePage(props: {
       </div>
       <div className="grid grid-cols-1">
         <section
-          className="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-20
-          w-11/12 sm:w-[600px] md:w-[800px] lg:w-[1000px] mt-28 
+          className="grid grid-cols-1 sm:grid-cols-2 gap-0 lg:gap-10
+          w-11/12 sm:w-[600px] md:w-[800px] lg:w-[1100px] mt-28 
           place-self-center"
         >
           {posts.map(async (post) => (
-            <div
-              key={post.id}
-              className="relative hover:opacity-70 hover:-translate-y-1 
-              transition-all duration-300 active:scale-95"
-            >
+            <div key={post.id} className="relative">
               <CardPost
+                tag={post.properties.Tags.multi_select[0].name}
+                cor={post.properties.Tags.multi_select[0].color || 'gray'}
                 key={post.id}
                 cover={
                   `/images/${post.id}.webp`
@@ -68,9 +65,9 @@ export default async function HomePage(props: {
               <div
                 className="h-[1px] sm:hidden w-[200px] md:w-[400px] 
                 lg:w-[800px] self-stretch bg-gradient-to-tr from-transparent 
-                via-white to-transparent opacity-25 mx-auto my-16 "
+                via-white to-transparent opacity-25 mx-auto my-8 sm:my-16 "
               />
-              <div
+              {/* <div
                 className={`
                     border absolute hidden lg:flex space-x-2 -mt-44 end-6 ${
                       post.properties.Tags.multi_select
@@ -82,17 +79,17 @@ export default async function HomePage(props: {
                       post.properties.Tags.multi_select
                         ? colorClasses[
                             post.properties.Tags.multi_select[0].color
-                          ] || 'bg-gray-100'
-                        : 'bg-gray-100'
+                          ] || 'border-gray-200 text-gray-200'
+                        : 'border-gray-200 text-gray-200'
                     } 
-                    text-[8px] font-semibold px-2 py-1 rounded-full 
+                    text-[10px] font-semibold px-2 py-1 rounded-full 
                     cursor-pointer
                 `}
               >
                 {post.properties.Tags.multi_select
                   ? `#${post.properties.Tags.multi_select[0].name}`
                   : ''}
-              </div>
+              </div> */}
             </div>
           ))}
         </section>
