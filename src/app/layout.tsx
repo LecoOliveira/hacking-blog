@@ -24,14 +24,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'pt_BR',
     url: 'https://hackingblog.online',
-    images: [
-      {
-        url: 'https://hackingblog.online/icon.png',
-        width: 1200,
-        height: 630,
-        alt: 'Hacking BLOG',
-      },
-    ],
+    siteName: 'Hacking BLOG',
   },
 };
 
