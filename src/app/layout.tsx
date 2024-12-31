@@ -27,8 +27,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://hackingblog.online/icon.png',
-        width: 100,
-        height: 100,
+        width: 1.9,
         alt: 'Hacking BLOG',
       },
     ],
