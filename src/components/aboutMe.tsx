@@ -18,13 +18,9 @@ export default function AboutMe() {
       <h2 className="mt-3 text-sm lg:text-base font-semibold italic">
         SOBRE MIM
       </h2>
-      <div
-        className="w-[37px] border border-dashed 
-        border-[#d5d5d6]/70 m-auto mt-1.5 mb-4"
-      />
       <p
         className="tracking-tight font-extralight text-[10px] lg:text-[13px] 
-        text-center"
+        text-center w-11/12"
       >
         Hacker, desenvolvedor e curioso por natureza. Se a gente não sabe, a
         gente aprende!

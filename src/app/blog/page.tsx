@@ -32,7 +32,7 @@ export default async function HomePage(props: {
         <SearchForm />
       </div>
       <div className="flex justify-center">
-        <h1 className="-mb-12 text-3xl font-medium "> BLOG </h1>
+        <h1 className="-mb-12 text-5xl font-semibold "> POSTS </h1>
       </div>
       <div className="grid grid-cols-1">
         <section
@@ -67,29 +67,6 @@ export default async function HomePage(props: {
                 lg:w-[800px] self-stretch bg-gradient-to-tr from-transparent 
                 via-white to-transparent opacity-25 mx-auto my-8 sm:my-16 "
               />
-              {/* <div
-                className={`
-                    border absolute hidden lg:flex space-x-2 -mt-44 end-6 ${
-                      post.properties.Tags.multi_select
-                        ? colorClasses[
-                            post.properties.Tags.multi_select[0].color
-                          ] || 'text-gray-200'
-                        : 'text-gray-200'
-                    } ${
-                      post.properties.Tags.multi_select
-                        ? colorClasses[
-                            post.properties.Tags.multi_select[0].color
-                          ] || 'border-gray-200 text-gray-200'
-                        : 'border-gray-200 text-gray-200'
-                    } 
-                    text-[10px] font-semibold px-2 py-1 rounded-full 
-                    cursor-pointer
-                `}
-              >
-                {post.properties.Tags.multi_select
-                  ? `#${post.properties.Tags.multi_select[0].name}`
-                  : ''}
-              </div> */}
             </div>
           ))}
         </section>

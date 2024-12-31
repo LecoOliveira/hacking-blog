@@ -70,7 +70,7 @@ export default async function Home() {
         </nav>
         <section
           className="place-self-center sm:place-self-start 
-          w-[150px] lg:w-[220px] mr-0"
+          w-[150px] lg:w-[280px] mr-0"
         >
           <AboutMe />
           <Subscription />
