@@ -33,6 +33,7 @@ export async function generateMetadata(
     title: title(),
     description: post.properties.Description.rich_text[0].plain_text,
     openGraph: {
+      title: title(),
       images: [post.cover, ...previousImages],
     },
   };

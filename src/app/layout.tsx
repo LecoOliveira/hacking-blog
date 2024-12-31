@@ -16,6 +16,23 @@ export const metadata: Metadata = {
   description:
     // eslint-disable-next-line max-len
     'Blog para compartilhamento de conhecimentos sobre hacking e segurança da informação.',
+  openGraph: {
+    title: 'Hacking BLOG',
+    description:
+      // eslint-disable-next-line max-len
+      'Blog para compartilhamento de conhecimentos sobre hacking e segurança da informação.',
+    type: 'website',
+    locale: 'pt_BR',
+    url: 'https://hackingblog.online',
+    images: [
+      {
+        url: 'https://hackingblog.online/logo_blog.svg',
+        width: 200,
+        height: 200,
+        alt: 'Hacking BLOG',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
