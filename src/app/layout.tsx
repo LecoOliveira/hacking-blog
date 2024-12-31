@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     url: 'https://hackingblog.online',
     images: [
       {
-        url: 'https://hackingblog.online/favicon.ico',
+        url: 'https://hackingblog.online/icon.svg',
         width: 100,
         height: 100,
         alt: 'Hacking BLOG',
