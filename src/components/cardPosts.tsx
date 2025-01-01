@@ -3,6 +3,7 @@ import { PostProps } from '@/types/notionTypes';
 import Image from 'next/image';
 import Link from 'next/link';
 import TagCard from './tagCard';
+import ShareLink from './socialShareLinks';
 
 export default function CardPost({
   cover,
@@ -17,7 +18,7 @@ export default function CardPost({
 
   return (
     <div
-      className="flex p-4 flex-col w-full h-[350px] md:h-[355px] mb-0 
+      className="flex p-4 flex-col w-full h-[380px] md:h-[380px] mb-0
       sm:mb-12 transition-all duration-300"
     >
       <Link href={`/blog/${slug}`} className="overflow-hidden rounded-xl">
@@ -48,9 +49,20 @@ export default function CardPost({
       <p className="font-light ml-2 italic mt-1.5 text-[10px]">
         {dataFormatada}
       </p>
-      <p className="w-full text-base md:text-left mt-4 m-2 mb-0 line-clamp-2">
+      <p
+        className="w-full text-sm lg:text-base md:text-left mt-1 m-2 
+        line-clamp-2"
+      >
         {description}
       </p>
+      <div
+        className="h-[1px] w-full self-stretch 
+        bg-gradient-to-tr from-transparent via-white to-transparent 
+        opacity-25 mx-auto mt-8 md:mt-4 lg:mt-8 lg:mb-0"
+      />
+      <div className="m-auto -mt-2 lg:-mt-2 z-10">
+        <ShareLink slug={slug} />
+      </div>
     </div>
   );
 }

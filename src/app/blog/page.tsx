@@ -36,7 +36,7 @@ export default async function HomePage(props: {
       </div>
       <div className="grid grid-cols-1">
         <section
-          className="grid grid-cols-1 sm:grid-cols-2 gap-0 lg:gap-10
+          className="grid grid-cols-1 md:grid-cols-2 gap-10
           w-11/12 sm:w-[600px] md:w-[800px] lg:w-[1100px] mt-28 
           place-self-center"
         >
@@ -61,11 +61,6 @@ export default async function HomePage(props: {
                   post.properties.Description.rich_text[0].plain_text
                 }
                 slug={post.properties.slug.rich_text[0].plain_text}
-              />
-              <div
-                className="h-[1px] sm:hidden w-[200px] md:w-[400px] 
-                lg:w-[800px] self-stretch bg-gradient-to-tr from-transparent 
-                via-white to-transparent opacity-25 mx-auto my-8 sm:my-16 "
               />
             </div>
           ))}
