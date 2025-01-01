@@ -32,11 +32,6 @@ export default async function Home() {
           description={mainPost.description}
           slug={mainPost.slug}
         />
-        <div
-          className="h-[1px] w-[200px] md:w-[400px] lg:w-[800px] self-stretch 
-          bg-gradient-to-tr from-transparent via-white to-transparent 
-          opacity-25 mx-auto my-16"
-        />
       </main>
       <section
         className="grid-cols-1 sm:flex flex-row justify-between sm:w-[600px] 
@@ -58,11 +53,6 @@ export default async function Home() {
                   data={post.date}
                   description={post.description}
                   slug={post.slug}
-                />
-                <div
-                  className="h-[1px] w-[300px] lg:w-[500px] self-stretch 
-                  bg-gradient-to-tr from-transparent via-white to-transparent 
-                  opacity-25 mx-auto my-12"
                 />
               </div>
             ))}

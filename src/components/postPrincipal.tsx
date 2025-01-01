@@ -1,7 +1,10 @@
 import { formatarDataEmPortugues } from '@/lib/utils';
 import { PostProps } from '@/types/notionTypes';
 import Image from 'next/image';
+import calendar from '../../public/calendar.webp';
 import Link from 'next/link';
+import ShareLink from './socialShareLinks';
+
 // import TagCard from './tagCard';
 
 export default function Post({
@@ -13,40 +16,70 @@ export default function Post({
 }: PostProps) {
   const dataFormatada = formatarDataEmPortugues(data);
   return (
-    <Link
-      href={`/blog/${slug}`}
-      className="group flex hover:opacity-60 transition-all 
+    <div
+      className="flex transition-all 
         duration-300 flex-col w-11/12 sm:w-[500px] md:w-[600px] 
-        lg:w-[1000px] hover:-translate-y-1 place-self-center
-        sm:mt-10 sm:mb-10 md:mb-20 animate-slideUp active:scale-95"
+        lg:w-[1000px] place-self-center
+        sm:mt-10 animate-slideUp"
     >
-      <Image
-        className="width-full lg:h-[300px] object-cover rounded-xl 
-        group-hover:grayscale transition-all duration-300"
-        src={cover}
-        alt="Imagem de capa do post"
-        width={1000}
-        height={300}
-        loading="eager"
-      />
-      <h2 className="text-lg md:text-2xl font-semibold italic mt-4 m-auto">
+      <Link href={`/blog/${slug}`} className="overflow-hidden rounded-xl">
+        <Image
+          className="width-full lg:h-[300px] object-cover rounded-xl
+          hover:grayscale hover:scale-105 
+          transition-all duration-300"
+          src={cover}
+          alt="Imagem de capa do post"
+          width={1000}
+          height={300}
+          loading="eager"
+        />
+      </Link>
+      <Link
+        href={`/blog/${slug}`}
+        className="text-lg md:text-2xl font-semibold italic mt-4 
+        after:duration-500 ease-out after:block after:h-0.5 after:w-full 
+        after:origin-bottom-right after:scale-x-0 after:bg-blue-500 
+        after:transition-transform after:hover:origin-bottom-left 
+        after:hover:scale-x-100
+        m-auto"
+      >
         {title}
-      </h2>
+      </Link>
       {/* <div className="m-auto">
         <TagCard tag={tag} cor={cor} />
       </div> */}
       <p
-        className="text-center font-light italic mt-1.5 
-        text-[9px] sm:text-[11px]"
-      >
-        {dataFormatada}
-      </p>
-      <p
         className="line-clamp-2 sm:line-clamp-none text-center 
-        text-sm md:text-base mt-4 md:mt-10 m-2 mb-0"
+        text-sm md:text-base mt-4 md:mt-8 m-2 mb-0"
       >
         {description}
       </p>
-    </Link>
+      <div
+        className="h-[1px] w-full self-stretch 
+          bg-gradient-to-tr from-transparent via-white to-transparent 
+          opacity-25 mx-auto mt-8"
+      />
+      <div
+        className="flex flex-row ml-2 font-light italic my-3 justify-between
+        text-[9px] sm:text-[11px]"
+      >
+        <div className="flex flex-row items-center">
+          <Image
+            className="mr-2 opacity-65"
+            src={calendar}
+            alt="Ícone de calendário"
+            width={14}
+            height={14}
+          />
+          {dataFormatada}
+        </div>
+        <ShareLink slug={slug} />
+      </div>
+      <div
+        className="h-[1px] w-full self-stretch 
+          bg-gradient-to-tr from-transparent via-white to-transparent 
+          opacity-25 mx-auto mb-16"
+      />
+    </div>
   );
 }

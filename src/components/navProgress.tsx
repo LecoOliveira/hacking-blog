@@ -13,8 +13,11 @@ export default function Navigation({ title }: { title: string }) {
         <li className="inline-flex items-center">
           <Link
             href="/"
-            className="inline-flex items-center text-xs sm:text-sm font-medium 
-            text-gray-400 hover:text-white"
+            className="text-xs sm:text-sm font-medium 
+            text-gray-400 hover:text-white after:duration-500 ease-out 
+            after:block after:h-0.5 after:w-full after:origin-bottom-right 
+            after:scale-x-0 after:bg-blue-500 after:transition-transform 
+            after:hover:origin-bottom-left after:hover:scale-x-100"
           >
             Home
           </Link>
@@ -39,7 +42,11 @@ export default function Navigation({ title }: { title: string }) {
             <Link
               href="/blog"
               className="ms-1 text-xs sm:text-sm font-medium 
-              md:ms-2 text-gray-400 hover:text-white"
+              md:ms-2 text-gray-400 hover:text-white after:duration-500 
+              ease-out after:block after:h-0.5 after:w-full 
+              after:origin-bottom-right after:scale-x-0 after:bg-blue-500 
+              after:transition-transform after:hover:origin-bottom-left 
+              after:hover:scale-x-100"
             >
               Blog
             </Link>
@@ -64,7 +71,7 @@ export default function Navigation({ title }: { title: string }) {
             </svg>
             <span
               className="ms-1 text-xs sm:text-sm font-medium 
-              text-gray-400 md:ms-2"
+              text-gray-500 md:ms-2"
             >
               {`${title}`}
             </span>

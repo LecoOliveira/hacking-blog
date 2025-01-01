@@ -37,6 +37,7 @@ export default function RootLayout({
     <html className={`${montserrat.className} antialiased`} lang="pt-br">
       <head>
         {/* <meta name="next-size-adjust" content="100%" /> */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta
           name="viewport"
           content="width=device-width, initial-content=1.0, 

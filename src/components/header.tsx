@@ -18,19 +18,31 @@ export default function Header() {
       </Link>
       <div className="hidden sm:flex flex-row gap-2 lg:gap-3 items-center">
         <Link
-          className="hover:text-white text-sm lg:text-base font-medium"
+          className="hover:text-white text-sm lg:text-base font-medium 
+          after:duration-500 ease-out after:block after:h-0.5 after:w-full 
+          after:origin-bottom-right after:scale-x-0 after:bg-blue-500 
+          after:transition-transform after:hover:origin-bottom-left 
+          after:hover:scale-x-100"
           href="/blog"
         >
           Posts
         </Link>
         <a
-          className="hover:text-white text-sm lg:text-base font-medium"
+          className="hover:text-white text-sm lg:text-base font-medium 
+          after:duration-500 ease-out after:block after:h-0.5 after:w-full 
+          after:origin-bottom-right after:scale-x-0 after:bg-blue-500 
+          :transition-transform after:hover:origin-bottom-left 
+          after:hover:scale-x-100"
           href="/writeups"
         >
           WriteUps
         </a>
         <a
-          className="hover:text-white text-sm lg:text-base font-medium"
+          className="hover:text-white text-sm lg:text-base font-medium 
+          after:duration-500 ease-out after:block after:h-0.5 after:w-full 
+          after:origin-bottom-right after:scale-x-0 after:bg-blue-500 
+          after:transition-transform after:hover:origin-bottom-left 
+          after:hover:scale-x-100"
           href="/about"
         >
           Sobre
