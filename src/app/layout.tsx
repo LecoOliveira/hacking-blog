@@ -27,6 +27,13 @@ export const metadata: Metadata = {
     url: 'https://hackingblog.online',
     siteName: 'Hacking BLOG',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hacking BLOG',
+    description:
+      'Blog para compartilhamento de conhecimentos sobre hacking e segurança da informação.',
+    creator: 'Alex Rocha',
+  },
 };
 
 export default function RootLayout({
