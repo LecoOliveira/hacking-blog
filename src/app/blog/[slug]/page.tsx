@@ -30,6 +30,7 @@ export async function generateMetadata(
   };
 
   return {
+    metadataBase: new URL('https://hackingblog.online'),
     title: title(),
     description: post.properties.Description.rich_text[0].plain_text,
     openGraph: {
@@ -38,7 +39,6 @@ export async function generateMetadata(
       images: [post.cover, ...previousImages],
       type: 'article',
       locale: 'pt_BR',
-      url: `https://hackingblog.online/blog/${slug}`,
       siteName: 'Hacking BLOG',
     },
     twitter: {
