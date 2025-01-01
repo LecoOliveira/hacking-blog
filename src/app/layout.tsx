@@ -45,6 +45,7 @@ export default function RootLayout({
   return (
     <html className={`${montserrat.className} antialiased`} lang="pt-br">
       <head>
+        <meta name="google-adsense-account" content="ca-pub-3434178867561403" />
         <GoogleAnalytics />
         {/* <meta name="next-size-adjust" content="100%" /> */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
