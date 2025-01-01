@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const montserrat = Montserrat({
   weight: ['200', '400', '500', '700'],
@@ -44,6 +45,7 @@ export default function RootLayout({
           maximum-scale=1.0,user-scalable=0"
         />
       </head>
+      <GoogleAnalytics />
       <body className="flex flex-col min-h-screen">
         <Header />
         {children}
