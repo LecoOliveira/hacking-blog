@@ -30,7 +30,6 @@ export async function generateMetadata(
   };
 
   return {
-    metadataBase: new URL(`https://hackingblog.online/blog/${slug}`),
     title: title(),
     description: post.properties.Description.rich_text[0].plain_text,
     openGraph: {
@@ -47,7 +46,7 @@ export async function generateMetadata(
       title: title(),
       description: post.properties.Description.rich_text[0].plain_text,
       creator: 'Alex Rocha',
-      images: [post.cover, ...previousImages],
+      images: [`https://hackingblog.online/${post.cover}`],
     },
   };
 }
