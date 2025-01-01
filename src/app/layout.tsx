@@ -37,6 +37,7 @@ export default function RootLayout({
   return (
     <html className={`${montserrat.className} antialiased`} lang="pt-br">
       <head>
+        <GoogleAnalytics />
         {/* <meta name="next-size-adjust" content="100%" /> */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta
@@ -44,7 +45,6 @@ export default function RootLayout({
           content="width=device-width, initial-content=1.0, 
           maximum-scale=1.0,user-scalable=0"
         />
-        <GoogleAnalytics />
       </head>
       <body className="flex flex-col min-h-screen">
         <Header />
