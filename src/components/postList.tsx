@@ -16,10 +16,7 @@ export default function PostList({
 }: PostProps) {
   const dataFormatada = formatarDataEmPortugues(data);
   return (
-    <div
-      className="flex flex-col lg:w-[600px] mb-16
-      sm:mb-16 transition-all duration-300"
-    >
+    <div className="flex flex-col lg:w-[600px] transition-all duration-300">
       <Link className="overflow-hidden rounded-xl" href={`/blog/${slug}`}>
         <Image
           className="width-full h-[150px] lg:h-[220px] object-cover rounded-xl 

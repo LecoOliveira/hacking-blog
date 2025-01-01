@@ -40,7 +40,7 @@ export default async function Home() {
         <nav className="place-self-center sm:place-self-start">
           <ul className="w-[350px] lg:w-[600px]">
             {listPosts.map(async (post) => (
-              <div key={post.slug} className="mb-6">
+              <div key={post.slug} className="mb-16">
                 <PostList
                   cor={post.tags.color}
                   tag={post.tags.name}
@@ -59,7 +59,7 @@ export default async function Home() {
           </ul>
         </nav>
         <section
-          className="place-self-center sm:place-self-start 
+          className="place-self-center sticky top-2 z-10 sm:place-self-start 
           w-[150px] lg:w-[280px] mr-0"
         >
           <AboutMe />

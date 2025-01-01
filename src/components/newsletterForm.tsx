@@ -2,8 +2,6 @@
 
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import email from '../../public/mail.svg';
-import Image from 'next/image';
 
 type FormData = {
   email: string;
@@ -38,16 +36,15 @@ const NewsletterForm: React.FC = () => {
 
   return (
     <form
-      className="embeddable-buttondown-form mt-8 
+      className="embeddable-buttondown-form mt-8 w-full
       flex flex-col items-center gap-2 relative z-0"
       onSubmit={handleSubmit(onSubmit)}
     >
-      {/* <label htmlFor="bd-email">Enter your email</label> */}
-      <div className="flex flex-row items-center gap-1 lg:gap-2">
-        <Image className="w-10" src={email} alt="ícone de email" />
+      <div className="flex flex-row items-center gap-1 lg:gap-2 w-full">
         <input
-          className="block bg-transparent border-b-2 appearance-none 
-          focus:outline-none text-[10.5px] lg:text-sm"
+          className="block bg-transparent border border-white/20  
+          rounded-md
+          p-3 text-[10.5px] lg:text-sm w-full outline-none"
           type="email"
           id="bd-email"
           placeholder="Seu melhor Email"
@@ -67,12 +64,13 @@ const NewsletterForm: React.FC = () => {
       )}
 
       <button
-        className="relative mt-4 w-[90px] lg:w-[120px] text-[10px] 
-        lg:text-[12px] px-4 py-1 border bg-[#d5d5d6] text-[#0e1018] 
-        rounded-lg hover:bg-white font-semibold active:opacity-65"
+        className="relative mt-2 w-[90px] lg:w-full text-[10px] 
+        lg:text-[14px] px-4 py-3 bg-[--foreground] text-[--background] 
+        hover:bg-blue-500 rounded-md font-semibold hover:text-white
+        active:opacity-65 transition-all duration-300 "
         type="submit"
       >
-        Subscribe
+        Inscreva-se
       </button>
     </form>
   );

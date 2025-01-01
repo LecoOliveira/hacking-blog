@@ -8,13 +8,26 @@ import NewsletterForm from './newsletterForm';
 
 export default function Subscription() {
   return (
-    <div className="flex flex-col mt-10 sm:mt-32 text-center items-center">
-      <h2 className="text-xs lg:text-base font-semibold italic tracking-tight">
+    <div className="flex flex-col mt-10 sm:mt-16 text-center items-center">
+      <div
+        className="h-[1px] w-full self-stretch 
+        bg-gradient-to-tr from-transparent via-white to-transparent 
+        opacity-25 mx-auto lg:mb-0"
+      />
+      <h2
+        className="text-xs lg:text-base font-semibold italic 
+        tracking-tight my-3"
+      >
         SIGMA-ME & SUBSCREVA
       </h2>
       <div
+        className="h-[1px] w-full self-stretch 
+        bg-gradient-to-tr from-transparent via-white to-transparent 
+        opacity-25 mx-auto lg:mb-0"
+      />
+      <div
         className="flex flex-row gap-1 lg:gap-3 items-center 
-        place-content-center mt-8"
+        place-content-center mt-7"
       >
         <Link href={''}>
           <Image
@@ -45,9 +58,9 @@ export default function Subscription() {
           />
         </Link>
       </div>
-      <h3 className="tracking-tight mt-6 text-xs md:w-2/4">
+      {/* <h3 className="tracking-tight mt-6 text-xs md:w-2/4">
         Cadastre-se para receber os últimos posts
-      </h3>
+      </h3> */}
       <NewsletterForm />
     </div>
   );
