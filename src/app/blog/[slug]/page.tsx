@@ -35,7 +35,7 @@ export async function generateMetadata(
     openGraph: {
       title: title(),
       description: post.properties.Description.rich_text[0].plain_text,
-      images: [post.cover, ...previousImages],
+      images: [`https://hackingblog.online/${post.cover}`, ...previousImages],
       type: 'article',
       locale: 'pt_BR',
       url: `https://hackingblog.online/blog/${slug}`,
@@ -46,7 +46,7 @@ export async function generateMetadata(
       title: title(),
       description: post.properties.Description.rich_text[0].plain_text,
       creator: 'Alex Rocha',
-      images: [`https://hackingblog.online/${post.cover}`],
+      images: [`https://hackingblog.online/${post.cover}`, previousImages],
     },
   };
 }
