@@ -42,6 +42,13 @@ export async function generateMetadata(
       url: `https://hackingblog.online/blog/${slug}`,
       siteName: 'Hacking BLOG',
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: title(),
+      description: post.properties.Description.rich_text[0].plain_text,
+      creator: 'Alex Rocha',
+      images: [post.cover, ...previousImages],
+    },
   };
 }
 
