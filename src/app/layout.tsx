@@ -14,7 +14,6 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hackingblog.online/'),
   title: 'Hacking BLOG',
   description:
     'Blog para compartilhamento de conhecimentos sobre hacking e segurança da informação.',
@@ -26,6 +25,7 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: 'https://hackingblog.online/',
     siteName: 'Hacking BLOG',
+    images: 'opengraph-image.jpg',
   },
   twitter: {
     card: 'summary_large_image',
@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     description:
       'Blog para compartilhamento de conhecimentos sobre hacking e segurança da informação.',
     creator: 'Alex Rocha',
+    images: 'twitter-image.jpg',
   },
 };
 
