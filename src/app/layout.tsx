@@ -44,8 +44,8 @@ export default function RootLayout({
           content="width=device-width, initial-content=1.0, 
           maximum-scale=1.0,user-scalable=0"
         />
+        <GoogleAnalytics />
       </head>
-      <GoogleAnalytics />
       <body className="flex flex-col min-h-screen">
         <Header />
         {children}
