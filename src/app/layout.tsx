@@ -23,9 +23,9 @@ export const metadata: Metadata = {
       'Blog para compartilhamento de conhecimentos sobre hacking e segurança da informação.',
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://hackingblog.online/',
+    url: 'https://hackingblog.online',
     siteName: 'Hacking BLOG',
-    images: 'https://hackingblog.online/opengraph-image.jpg',
+    images: '/opengraph-image.jpg',
   },
   twitter: {
     card: 'summary_large_image',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description:
       'Blog para compartilhamento de conhecimentos sobre hacking e segurança da informação.',
     creator: 'Alex Rocha',
-    images: 'https://hackingblog.online/twitter-image.jpg',
+    images: '/twitter-image.jpg',
   },
 };
 
