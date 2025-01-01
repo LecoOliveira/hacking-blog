@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import './globals.css';
@@ -13,14 +14,13 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://hackingblog.online'),
   title: 'Hacking BLOG',
   description:
-    // eslint-disable-next-line max-len
     'Blog para compartilhamento de conhecimentos sobre hacking e segurança da informação.',
   openGraph: {
     title: 'Hacking BLOG',
     description:
-      // eslint-disable-next-line max-len
       'Blog para compartilhamento de conhecimentos sobre hacking e segurança da informação.',
     type: 'website',
     locale: 'pt_BR',
