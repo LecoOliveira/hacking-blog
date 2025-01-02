@@ -1,11 +1,13 @@
 import AboutMe from '@/components/aboutMe';
 import Quote from '@/components/dailyQuote';
+import FormContact from '@/components/formContact';
 import InitialPhrase from '@/components/initialPhrase';
 import PostList from '@/components/postList';
 import Post from '@/components/postPrincipal';
 import Subscription from '@/components/subscription';
 import { fetchPages } from '@/lib/notion';
 import DailyQuote from '@/lib/quotes';
+import Link from 'next/link';
 
 export default async function Home() {
   const quote = DailyQuote();
@@ -13,7 +15,7 @@ export default async function Home() {
   const mainPost = posts[posts.length - 1];
   const listPosts = posts
     .filter((post) => post.slug !== mainPost.slug)
-    .slice(0, 3);
+    .slice(0, 4);
 
   return (
     <section className="scroll-smooth mb-48">
@@ -56,6 +58,23 @@ export default async function Home() {
                 />
               </div>
             ))}
+            <div className="m-auto w-[330px] -mt-3 flex flex-col items-center">
+              <div
+                className="h-[1px] w-[330px] self-stretch 
+                bg-gradient-to-tr from-transparent via-white to-transparent 
+                opacity-25 mb-12"
+              ></div>
+              <Link
+                href="/blog"
+                className="-mt-[60px] bg-[--background] px-4 z-10 
+                after:duration-500 ease-out after:block after:h-0.5 
+                after:w-full after:origin-bottom-right after:scale-x-0 
+                after:bg-blue-500 after:transition-transform 
+                after:hover:origin-bottom-left after:hover:scale-x-100"
+              >
+                Mais Posts
+              </Link>
+            </div>
           </ul>
         </nav>
         <section
@@ -67,6 +86,12 @@ export default async function Home() {
           <Quote quote={quote} />
         </section>
       </section>
+      {/* <div
+        className="h-[1px] w-full self-stretch 
+        bg-gradient-to-tr from-transparent via-white to-transparent 
+        opacity-10 mx-auto mt-10 mb-12"
+      /> */}
+      <FormContact />
     </section>
   );
 }

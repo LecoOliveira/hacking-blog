@@ -1,10 +1,8 @@
-import Image from 'next/image';
-import instagram from '../../public/instagram.svg';
-import whatsapp from '../../public/whatsapp.svg';
-import github from '../../public/github.svg';
-import linkedin from '../../public/linkedin.svg';
 import Link from 'next/link';
 import NewsletterForm from './newsletterForm';
+import SvgGithubNewsletter from './svgComponents/svgGithub2';
+import SvgLinkedinNewsletter from './svgComponents/svgLinkedin2';
+import SvgInstagramNewsletter from './svgComponents/svgInstagram2';
 
 export default function Subscription() {
   return (
@@ -26,35 +24,31 @@ export default function Subscription() {
         opacity-25 mx-auto lg:mb-0"
       />
       <div
-        className="flex flex-row gap-1 lg:gap-3 items-center 
+        className="flex flex-row gap-1 lg:gap-4 items-center 
         place-content-center mt-7"
       >
-        <Link href={''}>
-          <Image
-            className="w-4 lg:w-6 h-6 opacity-80 hover:opacity-100"
-            src={instagram}
-            alt="Logotipo do instagram"
+        <Link href={'https://istagram.com/lecooliveira_'} target="_blank">
+          <SvgInstagramNewsletter
+            className="w-6 h-6 fill-[--foreground] opacity-80
+            hover:fill-blue-500 hover:opacity-100 transition-all duration-300 
+            hover:scale-110"
           />
         </Link>
-        <Link href={''}>
-          <Image
-            className="w-4 lg:w-6 h-6 opacity-80 hover:opacity-100"
-            src={linkedin}
-            alt="Logotipo do linkedin"
+        <Link
+          href={'https://www.linkedin.com/in/alex-rocha-23119411b/'}
+          target="_blank"
+        >
+          <SvgLinkedinNewsletter
+            className="w-6 h-6 fill-[--foreground] opacity-80
+            hover:fill-blue-500 hover:opacity-100 transition-all duration-300
+            hover:scale-110"
           />
         </Link>
-        <Link href={''}>
-          <Image
-            className="w-4 lg:w-6 h-6 opacity-80 hover:opacity-100"
-            src={github}
-            alt="Logotipo do github"
-          />
-        </Link>
-        <Link href={''}>
-          <Image
-            className="w-4 lg:w-6 h-6 opacity-80 hover:opacity-100"
-            src={whatsapp}
-            alt="Logotipo do whatsapp"
+        <Link href={'https://github.com/LecoOliveira/'} target="_blank">
+          <SvgGithubNewsletter
+            className="w-6 h-6 fill-[--foreground] opacity-80
+            hover:fill-blue-500 hover:opacity-100 transition-all duration-300
+            hover:scale-110"
           />
         </Link>
       </div>

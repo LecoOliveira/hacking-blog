@@ -64,11 +64,11 @@ export default function NewsLetterFormAbout() {
         <button
           className="relative w-[90px] lg:w-[120px] h-11 text-[10px] 
           lg:text-[14px] px-4 py-1 border-none bg-[--foreground] 
-          text-[--background] rounded-md hover:bg-white font-semibold 
-          active:opacity-65 transition-all duration-300"
+          text-[--background] rounded-md hover:bg-blue-500 font-semibold 
+          active:opacity-65 transition-all duration-300 hover:text-white"
           type="submit"
         >
-          Subscribe
+          Inscreva-se
         </button>
       </div>
       {errors.email && (

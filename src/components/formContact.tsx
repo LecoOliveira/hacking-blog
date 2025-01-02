@@ -35,14 +35,14 @@ export default function FormContact() {
   return (
     <div className="mb-32">
       <div
-        className="h-[1px] w-[200px] md:w-[400px] lg:w-[800px] self-stretch 
+        className="h-[1px] w-full self-stretch 
         bg-gradient-to-tr from-transparent via-white to-transparent 
-        opacity-25 mx-auto mt-32 mb-24"
+        opacity-10 mx-auto mt-24 mb-12"
       />
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-center w-[340px] 
-        sm:w-[500px] md:w-[700px] lg:w-[800px]
+        sm:w-[500px] md:w-[700px] lg:w-[800px] mt-24
         h-full m-auto"
         ref={formRef}
       >
@@ -87,8 +87,8 @@ export default function FormContact() {
           disabled={isPending}
           type="submit"
           className="w-[120px] sm:w-[200px] md:w-[300px] h-[40px] 
-          bg-[#d5d5d6] text-[#0e1018] 
-          font-semibold hover:bg-opacity-70
+          bg-[--foreground] text-[--background] transition-all duration-300
+          font-semibold hover:bg-blue-500 hover:text-white active:opacity-55
           rounded-md mt-4"
         >
           {isPending ? 'Enviando...' : 'Enviar'}

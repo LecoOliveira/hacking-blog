@@ -4,6 +4,7 @@ import PaginationPage from '@/components/pagination';
 import SearchForm from '@/components/searchForm';
 import { Page } from '@/types/notionTypes';
 import axios from 'axios';
+// import { notFound } from 'next/navigation';
 
 export default async function HomePage(props: {
   searchParams?: Promise<{ page?: string | undefined; search?: string }>;
@@ -20,6 +21,11 @@ export default async function HomePage(props: {
     ? parseInt(searchParams?.page, 10) - 1
     : 0;
   const lengthPages = pages.length;
+
+  // if (lengthPages === 0) {
+  //   notFound();
+  // }
+
   const posts: Page[] = pages[pageIndex]?.results || [];
 
   return (
@@ -67,10 +73,12 @@ export default async function HomePage(props: {
         </section>
       </div>
       <div>
-        <PaginationPage
-          length={lengthPages}
-          currentPage={Number.isInteger(pageIndex) ? pageIndex + 1 : 1}
-        />
+        {lengthPages > 0 && (
+          <PaginationPage
+            length={lengthPages}
+            currentPage={Number.isInteger(pageIndex) ? pageIndex + 1 : 1}
+          />
+        )}
       </div>
     </section>
   );

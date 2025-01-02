@@ -13,10 +13,6 @@ export default function Footer() {
       className="flex flex-col items-center relative gap-4 inset-x-0 mt-auto
       bottom-8"
     >
-      <div
-        className="w-[140px] sm:w-[200px] border m-auto border-dashed 
-        border-[#d5d5d6]/70 mt-1.5 opacity-40"
-      />
       <Image
         className="w-32 sm:w-auto opacity-40"
         src={logo}

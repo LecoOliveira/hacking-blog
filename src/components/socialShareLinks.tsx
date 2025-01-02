@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import SvgFacebookComponent from './svgFacebook';
-import SvgWhatsappComponent from './svgWhatsapp';
-import SvgTweeterComponent from './svgTweeter';
-import SvgLinkedinComponent from './svgLinkedin';
+import SvgFacebookComponent from './svgComponents/svgFacebook';
+import SvgWhatsappComponent from './svgComponents/svgWhatsapp';
+import SvgTweeterComponent from './svgComponents/svgTweeter';
+import SvgLinkedinComponent from './svgComponents/svgLinkedin';
 
 export default function ShareLink({ slug }: { slug: string }) {
   return (
@@ -15,7 +15,7 @@ export default function ShareLink({ slug }: { slug: string }) {
       >
         <SvgFacebookComponent
           className="fill-[--foreground] hover:fill-blue-500 transition-all 
-              duration-300 opacity-65 hover:opacity-100 w-4"
+              duration-300 opacity-65 hover:opacity-100 w-4 hover:scale-110"
         />
       </Link>
       <Link
@@ -26,7 +26,7 @@ export default function ShareLink({ slug }: { slug: string }) {
       >
         <SvgWhatsappComponent
           className="fill-[--foreground] hover:fill-blue-500 transition-all 
-              duration-300 opacity-65 hover:opacity-100 w-4"
+              duration-300 opacity-65 hover:opacity-100 w-4 hover:scale-110"
         />
       </Link>
       <Link
@@ -37,7 +37,7 @@ export default function ShareLink({ slug }: { slug: string }) {
       >
         <SvgTweeterComponent
           className="fill-[--foreground] hover:fill-blue-500 transition-all 
-              duration-300 opacity-65 hover:opacity-100 w-4"
+              duration-300 opacity-65 hover:opacity-100 w-4 hover:scale-110"
         />
       </Link>
       <Link
@@ -48,7 +48,7 @@ export default function ShareLink({ slug }: { slug: string }) {
       >
         <SvgLinkedinComponent
           className="fill-[--foreground] hover:fill-blue-500 transition-all 
-              duration-300 opacity-65 hover:opacity-100 w-4"
+              duration-300 opacity-65 hover:opacity-100 w-4 hover:scale-110"
         />
       </Link>
     </div>
