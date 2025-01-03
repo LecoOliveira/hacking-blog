@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import SvgFacebookComponent from './svgComponents/svgFacebook';
 import SvgWhatsappComponent from './svgComponents/svgWhatsapp';
-import SvgTweeterComponent from './svgComponents/svgTweeter';
+import SvgTweeterComponent from './svgComponents/svgTwitter';
 import SvgLinkedinComponent from './svgComponents/svgLinkedin';
 
 export default function ShareLink({ slug }: { slug: string }) {

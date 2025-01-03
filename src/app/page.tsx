@@ -86,11 +86,6 @@ export default async function Home() {
           <Quote quote={quote} />
         </section>
       </section>
-      {/* <div
-        className="h-[1px] w-full self-stretch 
-        bg-gradient-to-tr from-transparent via-white to-transparent 
-        opacity-10 mx-auto mt-10 mb-12"
-      /> */}
       <FormContact />
     </section>
   );

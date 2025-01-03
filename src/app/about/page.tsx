@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import image from '../../../public/profilePicture/IMG_20221210_151515_627.jpg';
-import instagram from '../../../public/instagram-_1_.webp';
-import linkedin from '../../../public/linkedin.webp';
-import github from '../../../public/github.webp';
 import FormContact from '@/components/formContact';
 import NewsLetterFormAbout from '@/components/newsLetterFormAbout';
 import Link from 'next/link';
+import SvgInstagramAbout from '@/components/svgComponents/svgInstagram';
+import SvgLinkedinAbout from '@/components/svgComponents/svgLinkedin2';
+import SvgGithubAbout from '@/components/svgComponents/svgGithub';
 
 export default function Page() {
   return (
@@ -45,12 +45,10 @@ export default function Page() {
                     href="https://www.instagram.com/lecooliveira_/"
                     target="_blank"
                   >
-                    <Image
-                      src={instagram}
-                      alt="ícone do instagram"
-                      width={24}
-                      className="cursor-pointer opacity-65 hover:opacity-100 
-                      transition-all duration-300"
+                    <SvgInstagramAbout
+                      className="w-6 h-6 opacity-65 hover:opacity-100
+                      fill-[--foreground] hover:fill-blue-500 transition-all 
+                      duration-300 hover:scale-110"
                     />
                   </Link>
                 </li>
@@ -59,23 +57,19 @@ export default function Page() {
                     href="https://www.linkedin.com/in/alex-rocha-23119411b/"
                     target="_blank"
                   >
-                    <Image
-                      src={linkedin}
-                      alt="ícone do linkedin"
-                      width={24}
-                      className="cursor-pointer opacity-65 hover:opacity-100
-                      transition-all duration-300"
+                    <SvgLinkedinAbout
+                      className="w-6 h-6 fill-[--foreground] hover:scale-110
+                      hover:fill-blue-500 opacity-65 hover:opacity-100 
+                      transition-all duration-300 "
                     />
                   </Link>
                 </li>
                 <li>
                   <Link href="https://github.com/LecoOliveira/" target="_blank">
-                    <Image
-                      src={github}
-                      alt="ícone do github"
-                      width={24}
-                      className="cursor-pointer opacity-65 hover:opacity-100
-                      transition-all duration-300"
+                    <SvgGithubAbout
+                      className="w-6 h-6 fill-[--foreground] hover:fill-blue-500
+                      opacity-65 hover:opacity-100 transition-all duration-300
+                      hover:scale-110"
                     />
                   </Link>
                 </li>
