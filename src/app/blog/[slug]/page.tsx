@@ -2,7 +2,12 @@
 import Navigation from '@/components/navProgress';
 import TableContent from '@/components/tableOfContents';
 import Tags from '@/components/tags';
-import { fetchBySlug, fetchPageBlocks, getUser } from '@/lib/notion';
+import {
+  fetchBySlug,
+  fetchPageBlocks,
+  fetchPages,
+  getUser,
+} from '@/lib/notion';
 import { processBlocks } from '@/lib/notionProcessor';
 import { formatarDataEmPortugues } from '@/lib/utils';
 import { DataItem } from '@/types/notionTypes';
@@ -15,6 +20,11 @@ interface PageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateStaticParams() {
+  const posts = await fetchPages();
+  return posts.map(({ slug }) => ({ params: { slug } }));
 }
 
 export async function generateMetadata(
