@@ -54,7 +54,7 @@ export default function NewsLetterFormAbout() {
       >
         <input
           className="block w-80 h-11 bg-transparent border 
-          border-slate-800 appearance-none p-4 rounded-md
+          border-white/20 appearance-none p-4 rounded-md
           focus:outline-none focus:border-slate-500 text-[10.5px] lg:text-sm"
           type="email"
           id="bd-email"

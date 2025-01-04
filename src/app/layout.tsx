@@ -47,7 +47,7 @@ export default function RootLayout({
       <head>
         <meta name="google-adsense-account" content="ca-pub-3434178867561403" />
         <GoogleAnalytics />
-        {/* <meta name="next-size-adjust" content="100%" /> */}
+        <meta name="next-size-adjust" content="100%" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta
           name="viewport"
@@ -55,7 +55,7 @@ export default function RootLayout({
           maximum-scale=1.0,user-scalable=0"
         />
       </head>
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col min-h-screen overflow-x-hidden">
         <Header />
         {children}
         <Footer />

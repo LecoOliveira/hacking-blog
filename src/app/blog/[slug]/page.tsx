@@ -15,6 +15,7 @@ import Image from 'next/image';
 import { ResolvingMetadata } from 'next';
 import clock from '../../../../public/clock.webp';
 import calendar from '../../../../public/calendar.webp';
+import NextPosts from '@/components/nextPosts';
 
 interface PageProps {
   params: Promise<{
@@ -95,7 +96,7 @@ export default async function Page(props: PageProps) {
         >
           {post.cover && (
             <Image
-              className="relative object-fill md:object-cover rounded-xl "
+              className="relative object-cover rounded-xl "
               src={post.cover}
               alt="Imagem de capa"
               priority
@@ -162,6 +163,10 @@ export default async function Page(props: PageProps) {
         <div className="relative mr-0">
           <TableContent items={toc} />
         </div>
+      </div>
+      <div className="mt-20">
+        <h2 className="text-center text-xl font-bold">Veja mais</h2>
+        <NextPosts slug={slug} />
       </div>
     </div>
   );
