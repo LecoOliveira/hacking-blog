@@ -21,11 +21,6 @@ export default async function HomePage(props: {
     ? parseInt(searchParams?.page, 10) - 1
     : 0;
   const lengthPages = pages.length;
-
-  // if (lengthPages === 0) {
-  //   notFound();
-  // }
-
   const posts: Page[] = pages[pageIndex]?.results || [];
 
   return (

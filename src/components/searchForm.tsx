@@ -14,7 +14,7 @@ export default function SearchForm() {
       const string = event.target.value;
 
       if (string) {
-        params.set('search', string);
+        params.set('search', string.toLocaleLowerCase());
         params.set('page', '1');
       } else {
         params.delete('search');

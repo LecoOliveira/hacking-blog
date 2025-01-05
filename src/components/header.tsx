@@ -28,7 +28,7 @@ export default function Header() {
       item: 'Contato',
     },
   ];
-  console.log(pathName);
+
   return (
     <header
       className="flex flex-row items-center w-11/12 md:w-[600px] lg:w-[1000px]
