@@ -7,7 +7,7 @@ export default function AboutMe() {
   return (
     <Link
       href={'/about'}
-      className="hidden sm:flex flex-col justify-center 
+      className="hidden md:flex flex-col justify-center 
       items-center cursor-pointer"
     >
       <div

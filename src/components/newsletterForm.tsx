@@ -64,8 +64,8 @@ const NewsletterForm: React.FC = () => {
       )}
 
       <button
-        className="relative mt-2 w-[90px] lg:w-full text-[10px] 
-        lg:text-[14px] px-4 py-3 bg-[--foreground] text-[--background] 
+        className="relative mt-2 w-[100px] lg:w-full text-[10px] 
+        lg:text-[14px] px-4 py-2 lg:py-3 bg-[--foreground] text-[--background] 
         hover:bg-blue-500 rounded-md font-semibold hover:text-white
         active:opacity-65 transition-all duration-300 "
         type="submit"

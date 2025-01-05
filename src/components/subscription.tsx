@@ -24,7 +24,7 @@ export default function Subscription() {
         opacity-25 mx-auto lg:mb-0"
       />
       <div
-        className="flex flex-row gap-1 lg:gap-4 items-center 
+        className="flex flex-row gap-4 items-center 
         place-content-center mt-7"
       >
         <Link href={'https://istagram.com/lecooliveira_'} target="_blank">
@@ -52,9 +52,6 @@ export default function Subscription() {
           />
         </Link>
       </div>
-      {/* <h3 className="tracking-tight mt-6 text-xs md:w-2/4">
-        Cadastre-se para receber os últimos posts
-      </h3> */}
       <NewsletterForm />
     </div>
   );

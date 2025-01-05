@@ -62,8 +62,8 @@ export default function NewsLetterFormAbout() {
           {...register('email')}
         />
         <button
-          className="relative w-[90px] lg:w-[120px] h-11 text-[10px] 
-          lg:text-[14px] px-4 py-1 border-none bg-[--foreground] 
+          className="relative w-[130px] lg:w-[120px] h-11 text-[10px] 
+          lg:text-[14px] md:px-4 md:py-1 border-none bg-[--foreground] 
           text-[--background] rounded-md hover:bg-blue-500 font-semibold 
           active:opacity-65 transition-all duration-300 hover:text-white"
           type="submit"

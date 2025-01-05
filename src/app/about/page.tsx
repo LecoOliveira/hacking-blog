@@ -14,7 +14,7 @@ export default function Page() {
         <section
           className="flex flex-col-reverse sm:grid grid-cols-2 w-[320px] 
           sm:w-[550px] md:w-[700px] lg:w-[1050px] h-[460px] sm:h-[320px] 
-          md:h-[400px] lg:h-[500px] mx-auto relative mt-40
+          md:h-[400px] lg:h-[500px] mx-auto relative mt-52 md:mt-40
           items-center"
         >
           <article

@@ -39,11 +39,11 @@ export default async function Home() {
         )}
       </main>
       <section
-        className="grid-cols-1 sm:flex flex-row justify-between sm:w-[600px] 
-        lg:w-[1000px] mx-auto mt-4 md:mt-20"
+        className="grid-cols-1 md:flex flex-row justify-between sm:w-[650px] 
+        md:w-[700px] lg:w-[1000px] mx-auto mt-4 md:mt-20"
       >
-        <nav className="place-self-center sm:place-self-start">
-          <ul className="w-[350px] lg:w-[600px]">
+        <nav className="place-self-center md:place-self-start">
+          <ul className="w-[350px] sm:w-[450px] md:w-[420px] lg:w-[600px]">
             {listPosts.map(async (post) => (
               <div key={post?.slug} className="mb-16">
                 <PostList
@@ -62,9 +62,9 @@ export default async function Home() {
                 />
               </div>
             ))}
-            <div className="m-auto w-[330px] -mt-3 flex flex-col items-center">
+            <div className="m-auto w-[250px] -mt-3 flex flex-col items-center">
               <div
-                className="h-[1px] w-[330px] self-stretch 
+                className="h-[1px] w-[250px] self-stretch 
                 bg-gradient-to-tr from-transparent via-white to-transparent 
                 opacity-25 mb-12"
               ></div>
@@ -82,8 +82,8 @@ export default async function Home() {
           </ul>
         </nav>
         <section
-          className="place-self-center sticky top-2 z-10 sm:place-self-start 
-          w-[150px] lg:w-[280px] mr-0"
+          className="place-self-center sticky top-2 z-10 md:place-self-start 
+          w-[250px] sm:w-[200px] lg:w-[280px] mr-0"
         >
           <AboutMe />
           <Subscription />
