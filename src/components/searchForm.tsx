@@ -1,25 +1,29 @@
 'use client';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useDebouncedCallback } from 'use-debounce';
 
 export default function SearchForm() {
   const searchParams = useSearchParams();
   const pathName = usePathname();
   const { replace } = useRouter();
 
-  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const params = new URLSearchParams(searchParams);
-    const string = event.currentTarget.value;
+  const handleChange = useDebouncedCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const params = new URLSearchParams(searchParams);
+      const string = event.target.value;
 
-    if (string) {
-      params.set('search', string);
-      params.set('page', '1');
-    } else {
-      params.delete('search');
-      params.delete('page');
-    }
-    replace(`${pathName}?${params.toString()}`);
-  }
+      if (string) {
+        params.set('search', string);
+        params.set('page', '1');
+      } else {
+        params.delete('search');
+        params.delete('page');
+      }
+      replace(`${pathName}?${params.toString()}`);
+    },
+    500,
+  );
 
   return (
     <div className=" max-w-md">
