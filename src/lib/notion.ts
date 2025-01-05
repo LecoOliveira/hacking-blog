@@ -7,6 +7,7 @@ import {
 import { NotionDatabaseResponse, Page } from '@/types/notionTypes';
 import React from 'react';
 import 'server-only';
+import { notFound } from 'next/navigation';
 
 export const notion = new Client({
   auth: process.env.NOTION_TOKEN,
@@ -50,23 +51,26 @@ export const fetchPages = React.cache(async () => {
 });
 
 export const fetchBySlug = React.cache(async (slug: string) => {
-  const response = await notion.databases.query({
-    database_id: `${process.env.NOTION_DATABASE_ID}`,
-    filter: {
-      property: 'slug',
-      rich_text: {
-        equals: slug,
+  try {
+    const response = await notion.databases.query({
+      database_id: `${process.env.NOTION_DATABASE_ID}`,
+      filter: {
+        property: 'slug',
+        rich_text: {
+          equals: slug,
+        },
       },
-    },
-  });
+    });
 
-  const typedResponse = response.results[0] as Page;
-  const cover = `/images/${typedResponse.id}.webp`;
-
-  return {
-    ...typedResponse,
-    cover: cover,
-  };
+    const typedResponse = response.results[0] as Page;
+    const cover = `/images/${typedResponse.id}.webp`;
+    return {
+      ...typedResponse,
+      cover: cover,
+    };
+  } catch {
+    notFound();
+  }
 });
 
 export const fetchPageBlocks = React.cache(async (pageId: string) => {
