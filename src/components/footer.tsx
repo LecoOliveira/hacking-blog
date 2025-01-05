@@ -3,6 +3,8 @@ import logo from '../../public/logo_blog.svg';
 import Link from 'next/link';
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer
       className="flex flex-col items-center relative gap-4 inset-x-0 mt-auto
@@ -18,7 +20,7 @@ export default function Footer() {
         className="text-base sm:text-lg opacity-40 
         font-extralight tracking-wide"
       >
-        © Copyrigth 2024 - hackingblog.online
+        © Copyrigth {year} - hackingblog.online
       </div>
       <div>
         <Link
