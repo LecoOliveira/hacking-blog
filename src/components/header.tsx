@@ -1,8 +1,24 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../../public/logo_blog.svg';
+import HeaderItem, { HeaderItemsType } from './headerItems';
 
 export default function Header() {
+  const items: HeaderItemsType[] = [
+    {
+      url: '/blog',
+      item: 'Posts',
+    },
+    {
+      url: '/writeups',
+      item: 'Writeups',
+    },
+    {
+      url: '/about',
+      item: 'Sobre',
+    },
+  ];
+
   return (
     <header
       className="flex flex-row items-center md:w-[600px] lg:w-[1000px]
@@ -16,38 +32,11 @@ export default function Header() {
           priority
         />
       </Link>
-      <div className="hidden sm:flex flex-row gap-2 lg:gap-3 items-center">
-        <Link
-          className="hover:text-white text-sm lg:text-base font-medium 
-          after:duration-500 ease-out after:block after:h-0.5 after:w-full 
-          after:origin-bottom-right after:scale-x-0 after:bg-blue-500 
-          after:transition-transform after:hover:origin-bottom-left 
-          after:hover:scale-x-100"
-          href="/blog"
-        >
-          Posts
-        </Link>
-        <a
-          className="hover:text-white text-sm lg:text-base font-medium 
-          after:duration-500 ease-out after:block after:h-0.5 after:w-full 
-          after:origin-bottom-right after:scale-x-0 after:bg-blue-500 
-          :transition-transform after:hover:origin-bottom-left 
-          after:hover:scale-x-100"
-          href="/writeups"
-        >
-          WriteUps
-        </a>
-        <a
-          className="hover:text-white text-sm lg:text-base font-medium 
-          after:duration-500 ease-out after:block after:h-0.5 after:w-full 
-          after:origin-bottom-right after:scale-x-0 after:bg-blue-500 
-          after:transition-transform after:hover:origin-bottom-left 
-          after:hover:scale-x-100"
-          href="/about"
-        >
-          Sobre
-        </a>
-      </div>
+      <ul className="hidden sm:flex flex-row gap-2 lg:gap-3 items-center">
+        {items.map(({ item, url }, index) => (
+          <HeaderItem url={url} item={item} key={index} />
+        ))}
+      </ul>
     </header>
   );
 }
