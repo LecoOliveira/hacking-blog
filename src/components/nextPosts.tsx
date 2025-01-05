@@ -11,6 +11,7 @@ export default async function NextPosts(slug: { slug: string }) {
   const previewsPost = nextPosts.filter((post) => post !== nextPost);
   const random2 = Math.floor(Math.random() * previewsPost.length);
   const previewPost = previewsPost[random2];
+  console.log(nextPost.id);
 
   return (
     <div
@@ -83,7 +84,7 @@ export default async function NextPosts(slug: { slug: string }) {
           <Image
             className="object-cover hover:scale-105 hover:grayscale 
             transition-all duration-300"
-            src={nextPost.cover}
+            src={`/images/${nextPost.id}.webp`}
             alt="Imagem do próximo post"
             fill
           />
