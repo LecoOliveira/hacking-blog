@@ -18,7 +18,7 @@ export default function Footer() {
         className="text-base sm:text-lg opacity-40 
         font-extralight tracking-wide"
       >
-        © Copyrigth 2024 - Alex Rocha
+        © Copyrigth 2024 - hackingblog.online
       </div>
       <div>
         <Link

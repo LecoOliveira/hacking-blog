@@ -67,6 +67,7 @@ export default async function HomePage(props: {
                   post.properties.Description.rich_text[0].plain_text
                 }
                 slug={post.properties.slug.rich_text[0].plain_text}
+                user={post.properties['Criado por'].created_by.name}
               />
             </div>
           ))}

@@ -119,7 +119,7 @@ export default function Privacy() {
       </p>
       <p className="leading-7">
         <span>
-          Esta política é efetiva a partir de&nbsp;5 January 2025 03:10
+          Esta política é efetiva a partir de&nbsp;5 de Janeiro de 2025 03:10
         </span>
       </p>
     </div>

@@ -187,6 +187,7 @@ export interface PostProps {
   slug: string;
   tag?: string;
   cor?: string;
+  user: string;
 }
 
 export interface ReadTime {

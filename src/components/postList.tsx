@@ -1,5 +1,7 @@
 import { formatarDataEmPortugues } from '@/lib/utils';
 import { PostProps } from '@/types/notionTypes';
+import calendar from '../../public/calendar.webp';
+import userIcon from '../../public/icons8-user-male-52-_1_.webp';
 import Image from 'next/image';
 import Link from 'next/link';
 import TagCard from './tagCard';
@@ -13,6 +15,7 @@ export default function PostList({
   slug,
   tag,
   cor,
+  user,
 }: PostProps) {
   const dataFormatada = formatarDataEmPortugues(data);
   return (
@@ -42,12 +45,35 @@ export default function PostList({
         </Link>
         <TagCard tag={tag || ''} cor={cor || ''} />
       </div>
-      <p
-        className="ml-2 font-light italic mt-1.5 text-[9px] 
-        lg:text-[11px]"
+      <div
+        className="font-light italic mt-1.5 text-[9px] 
+        lg:text-[11px] flex flex-row items-center align-middle"
       >
-        {dataFormatada}
-      </p>
+        <Image
+          className="mx-2 opacity-65"
+          src={calendar}
+          alt="Ícone de calendário"
+          width={14}
+          height={14}
+        />
+        <p>{dataFormatada}</p>
+        <Image
+          className="mx-2 opacity-65"
+          src={userIcon}
+          alt="Ícone de user"
+          width={14}
+          height={14}
+        />
+        <Link
+          href={'/about'}
+          className="after:duration-500 ease-out after:block after:h-0.5 
+          after:w-full after:origin-bottom-right after:scale-x-0 
+          after:bg-blue-500 after:transition-transform 
+          after:hover:origin-bottom-left after:hover:scale-x-100"
+        >
+          {user}
+        </Link>
+      </div>
       <p
         className="md:text-left text-sm line-clamp-2
         lg:text-base mt-6 m-2 mb-0"

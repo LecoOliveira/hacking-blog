@@ -21,19 +21,22 @@ export default async function Home() {
     <section className="scroll-smooth mb-48">
       <main className="grid">
         <InitialPhrase />
-        <Post
-          cor={mainPost.tags.color}
-          tag={mainPost.tags.name}
-          cover={
-            `/images/${mainPost.id}.webp`
-              ? `/images/${mainPost.id}.webp`
-              : mainPost.cover
-          }
-          title={mainPost.title}
-          data={mainPost.date}
-          description={mainPost.description}
-          slug={mainPost.slug}
-        />
+        {mainPost && (
+          <Post
+            cor={mainPost?.tags.color}
+            tag={mainPost?.tags.name}
+            cover={
+              `/images/${mainPost?.id}.webp`
+                ? `/images/${mainPost?.id}.webp`
+                : mainPost?.cover
+            }
+            title={mainPost?.title}
+            data={mainPost?.date}
+            description={mainPost?.description}
+            slug={mainPost?.slug}
+            user={mainPost?.user}
+          />
+        )}
       </main>
       <section
         className="grid-cols-1 sm:flex flex-row justify-between sm:w-[600px] 
@@ -42,19 +45,20 @@ export default async function Home() {
         <nav className="place-self-center sm:place-self-start">
           <ul className="w-[350px] lg:w-[600px]">
             {listPosts.map(async (post) => (
-              <div key={post.slug} className="mb-16">
+              <div key={post?.slug} className="mb-16">
                 <PostList
-                  cor={post.tags.color}
-                  tag={post.tags.name}
+                  cor={post?.tags.color}
+                  tag={post?.tags.name}
                   cover={
-                    `/images/${post.id}.webp`
-                      ? `/images/${post.id}.webp`
-                      : post.cover
+                    `/images/${post?.id}.webp`
+                      ? `/images/${post?.id}.webp`
+                      : post?.cover
                   }
-                  title={post.title}
-                  data={post.date}
-                  description={post.description}
-                  slug={post.slug}
+                  title={post?.title}
+                  data={post?.date}
+                  description={post?.description}
+                  slug={post?.slug}
+                  user={post?.user}
                 />
               </div>
             ))}

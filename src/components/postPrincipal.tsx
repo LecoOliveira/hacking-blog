@@ -2,6 +2,7 @@ import { formatarDataEmPortugues } from '@/lib/utils';
 import { PostProps } from '@/types/notionTypes';
 import Image from 'next/image';
 import calendar from '../../public/calendar.webp';
+import userIcon from '../../public/icons8-user-male-52-_1_.webp';
 import Link from 'next/link';
 import ShareLink from './socialShareLinks';
 
@@ -13,6 +14,7 @@ export default function Post({
   data,
   description,
   slug,
+  user,
 }: PostProps) {
   const dataFormatada = formatarDataEmPortugues(data);
   return (
@@ -65,13 +67,29 @@ export default function Post({
       >
         <div className="flex flex-row items-center">
           <Image
-            className="mr-2 opacity-65"
+            className="mx-2 opacity-65"
             src={calendar}
             alt="Ícone de calendário"
             width={14}
             height={14}
           />
-          {dataFormatada}
+          <p>{dataFormatada}</p>
+          <Image
+            className="mx-2 opacity-65"
+            src={userIcon}
+            alt="Ícone de user"
+            width={14}
+            height={14}
+          />
+          <Link
+            href={'/about'}
+            className="after:duration-500 ease-out after:block after:h-0.5 
+          after:w-full after:origin-bottom-right after:scale-x-0 
+          after:bg-blue-500 after:transition-transform 
+          after:hover:origin-bottom-left after:hover:scale-x-100"
+          >
+            {user}
+          </Link>
         </div>
         <ShareLink slug={slug} />
       </div>
