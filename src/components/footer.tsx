@@ -1,10 +1,5 @@
 import Image from 'next/image';
 import logo from '../../public/logo_blog.svg';
-import instagram from '../../public/instagram.svg';
-import whatsapp from '../../public/whatsapp.svg';
-import github from '../../public/github.svg';
-import linkedin from '../../public/linkedin.svg';
-import email from '../../public/email.svg';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -20,46 +15,26 @@ export default function Footer() {
         priority
       />
       <div
-        className="text-xs sm:text-base opacity-40 
+        className="text-base sm:text-lg opacity-40 
         font-extralight tracking-wide"
       >
         © Copyrigth 2024 - Alex Rocha
       </div>
-      <div className="group flex flex-row gap-2">
-        <Link href={''}>
-          <Image
-            className="w-3.5 opacity-40 hover:opacity-100"
-            src={instagram}
-            alt="Logotipo do instagram"
-          />
+      <div>
+        <Link
+          href={'/privacy'}
+          className="text-[9px] sm:text-xs opacity-40 
+          hover:opacity-100 transition-all duration-300"
+        >
+          Políticas de Privacidade
         </Link>
-        <Link href={''}>
-          <Image
-            className="w-3.5 opacity-40 hover:opacity-100 transition-opacity"
-            src={linkedin}
-            alt="Logotipo do linkedin"
-          />
-        </Link>
-        <Link href={''}>
-          <Image
-            className="w-3.5 opacity-40 hover:opacity-100"
-            src={github}
-            alt="Logotipo do github"
-          />
-        </Link>
-        <Link href={''}>
-          <Image
-            className="w-3.5 opacity-40 hover:opacity-100"
-            src={whatsapp}
-            alt="Logotipo do whatsapp"
-          />
-        </Link>
-        <Link href={''}>
-          <Image
-            className="w-3.5 opacity-40 hover:opacity-100"
-            src={email}
-            alt="Logotipo do email"
-          />
+        <span className="opacity-40"> - </span>
+        <Link
+          href={'/terms'}
+          className="text-[9px] sm:text-xs opacity-40 
+          hover:opacity-100 transition-all duration-300"
+        >
+          Termos e Condições
         </Link>
       </div>
     </footer>
