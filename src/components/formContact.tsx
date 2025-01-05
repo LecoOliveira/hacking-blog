@@ -46,7 +46,10 @@ export default function FormContact() {
         h-full m-auto"
         ref={formRef}
       >
-        <h1 className="text-2xl sm:text-3xl font-semibold text-center mb-8">
+        <h1
+          className="text-2xl sm:text-3xl font-semibold text-center mb-8"
+          id="contato"
+        >
           Entre em contato
         </h1>
         <p className="text-center w-full font-thin mb-12 text-xs sm:text-sm">

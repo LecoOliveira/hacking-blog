@@ -27,7 +27,7 @@ export default async function NextPosts(slug: { slug: string }) {
             <Image
               className="object-cover hover:scale-105 hover:grayscale 
               transition-all duration-300"
-              src={previewPost?.cover}
+              src={`/images/${previewPost?.id}.webp`}
               alt="Imagem do post anterior"
               fill
             />

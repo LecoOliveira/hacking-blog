@@ -3,9 +3,15 @@ export interface HeaderItemsType {
   item: string;
   url: string;
   isActive?: boolean;
+  onClick?: () => void;
 }
 
-export default function HeaderItem({ item, url, isActive }: HeaderItemsType) {
+export default function HeaderItem({
+  item,
+  url,
+  isActive,
+  onClick,
+}: HeaderItemsType) {
   return (
     <li
       className="hover:text-white text-sm lg:text-base font-medium 
@@ -15,6 +21,7 @@ export default function HeaderItem({ item, url, isActive }: HeaderItemsType) {
           after:hover:scale-x-100"
     >
       <Link
+        onClick={onClick}
         href={url}
         className={`
           ${
