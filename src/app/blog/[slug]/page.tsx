@@ -156,8 +156,9 @@ export default async function Page(props: PageProps) {
           prose-h1:text-2xl md:prose-h1:text-4xl text-pretty prose-img:
           prose-img:rounded-lg prose-img:drop-shadow-lg prose-img:object-cover
           prose-p:text-[--foreground] prose-headings:text-[--foreground] 
-          prose-li:text-base prose-h3:text-2xl prose-p:leading-6 
-          lg:prose-p:leading-7 lg:prose-p:font-medium"
+          md:prose-li:text-base prose-h3:text-2xl prose-p:leading-8 
+          lg:prose-p:leading-8 lg:prose-p:font-medium prose-pre:prose-gray
+          prose-li:text-[--foreground] prose-li:text-sm"
           dangerouslySetInnerHTML={{ __html: html }}
         ></div>
         <div className="relative mr-0">
