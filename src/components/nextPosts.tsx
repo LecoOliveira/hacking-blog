@@ -41,9 +41,10 @@ export default async function NextPosts(slug: { slug: string }) {
               className="group text-base lg:text-lg font-medium w-4/5 italic"
             >
               <span
-                className="group-hover:underline decoration-transparent 
-                group-hover:decoration-blue-500 transition-all duration-300 
-                group-hover:decoration-solid group-hover:decoration-2"
+                className="group-hover:underline underline-offset-4 
+                decoration-transparent group-hover:decoration-blue-500 
+                transition-all duration-300 group-hover:decoration-solid 
+                group-hover:decoration-2"
               >
                 {previewPost?.title}
               </span>
@@ -71,7 +72,8 @@ export default async function NextPosts(slug: { slug: string }) {
               <span
                 className="group-hover:underline decoration-transparent 
                 group-hover:decoration-blue-500 transition-all duration-300 
-                group-hover:decoration-solid group-hover:decoration-2"
+                group-hover:decoration-solid group-hover:decoration-2
+                underline-offset-4"
               >
                 {nextPost?.title}
               </span>

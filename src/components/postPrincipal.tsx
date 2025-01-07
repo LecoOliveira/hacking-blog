@@ -47,9 +47,6 @@ export default function Post({
       >
         {title}
       </Link>
-      {/* <div className="m-auto">
-        <TagCard tag={tag} cor={cor} />
-      </div> */}
       <p
         className="line-clamp-2 sm:line-clamp-none text-center 
         text-sm md:text-base mt-4 md:mt-8 m-2 mb-0"

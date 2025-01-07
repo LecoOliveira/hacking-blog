@@ -16,6 +16,7 @@ import { ResolvingMetadata } from 'next';
 import clock from '../../../../public/clock.webp';
 import calendar from '../../../../public/calendar.webp';
 import NextPosts from '@/components/nextPosts';
+import ShareArticle from '@/components/shareThisArticle';
 
 interface PageProps {
   params: Promise<{
@@ -146,27 +147,31 @@ export default async function Page(props: PageProps) {
         className="relative grid grid-cols-1 md:flex flex-row gap-8
         lg:gap-16"
       >
-        <div
-          className="w-11/12 max-w-min-[360px] sm:w-[600px] md:w-[800px] 
-          place-self-center lg:w-full prose prose:opacity-90 prose-invert 
-          prose-ul:text-sm prose-headings:mt-10 prose-p:mt-10
-          lg:prose-ul:text-base prose-code:text-xs lg:prose-code:text-sm 
-          prose-h2:text-2xl prose-p:text-sm lg:prose-p:text-base  
-          prose-img:w-full prose-figure:text-xs prose-figure:text-center
-          prose-h1:text-2xl md:prose-h1:text-4xl text-pretty prose-img:
-          prose-img:rounded-lg prose-img:drop-shadow-lg prose-img:object-cover
-          prose-p:text-[--foreground] prose-headings:text-[--foreground] 
-          md:prose-li:text-base prose-h3:text-2xl prose-p:leading-8 
-          lg:prose-p:leading-8 lg:prose-p:font-medium prose-pre:prose-gray
-          prose-li:text-[--foreground] prose-li:text-sm"
-          dangerouslySetInnerHTML={{ __html: html }}
-        ></div>
+        <div className="lg:min-w-[700px]">
+          <div
+            className="w-11/12 max-w-min-[360px] sm:w-[600px] md:w-full 
+            place-self-center lg:w-full prose prose:opacity-90 prose-invert 
+            prose-ul:text-sm prose-headings:mt-10 prose-p:mt-10
+            lg:prose-ul:text-base prose-code:text-xs lg:prose-code:text-sm 
+            prose-h2:text-2xl prose-p:text-sm lg:prose-p:text-base  
+            prose-img:w-full prose-figure:text-xs prose-figure:text-center
+            prose-h1:text-2xl md:prose-h1:text-4xl text-pretty prose-img:
+            prose-img:rounded-lg prose-img:drop-shadow-lg prose-img:object-cover
+            prose-p:text-[--foreground] prose-headings:text-[--foreground] 
+            md:prose-li:text-base prose-h3:text-2xl prose-p:leading-8 
+            prose-text:leading-8 prose-li:leading-8
+            lg:prose-p:leading-8 lg:prose-p:font-medium prose-pre:prose-gray
+            prose-li:text-[--foreground] prose-li:text-sm"
+            dangerouslySetInnerHTML={{ __html: html }}
+          ></div>
+          <ShareArticle slug={slug} />
+        </div>
         <div className="relative mr-0">
           <TableContent items={toc} />
         </div>
       </div>
       <div className="mt-20">
-        <h2 className="text-center text-xl font-bold">Veja mais</h2>
+        <h2 className="text-center text-3xl font-medium">Veja mais</h2>
         <NextPosts slug={slug} />
       </div>
     </div>

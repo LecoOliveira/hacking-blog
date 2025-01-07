@@ -3,10 +3,11 @@ import SvgFacebookComponent from './svgComponents/svgFacebook';
 import SvgWhatsappComponent from './svgComponents/svgWhatsapp';
 import SvgTweeterComponent from './svgComponents/svgTwitter';
 import SvgLinkedinComponent from './svgComponents/svgLinkedin';
+import CopyLinkComponent from './copyLink';
 
-export default function ShareLink({ slug }: { slug: string }) {
+export default function ShareLinkPost({ slug }: { slug: string }) {
   return (
-    <div className="flex flex-row gap-2 px-6 bg-[--background] rounded-lg">
+    <div className="flex flex-row gap-8 px-6 bg-[--background] rounded-lg">
       <Link
         title="Compartilhar no Facebook"
         href={`https://www.facebook.com/sharer/sharer.php?u=https://hackingblog.online/blog/${slug}`}
@@ -16,7 +17,7 @@ export default function ShareLink({ slug }: { slug: string }) {
         <SvgFacebookComponent
           className={`
             fill-[--foreground] hover:fill-blue-500 transition-all 
-            duration-300 opacity-65 hover:opacity-100 w-4
+            duration-300 opacity-65 hover:opacity-100 w-6
             hover:scale-110
             `}
         />
@@ -30,7 +31,7 @@ export default function ShareLink({ slug }: { slug: string }) {
         <SvgWhatsappComponent
           className={`
             fill-[--foreground] hover:fill-blue-500 transition-all 
-            duration-300 opacity-65 hover:opacity-100 w-4 hover:scale-110
+            duration-300 opacity-65 hover:opacity-100 w-6 hover:scale-110
             `}
         />
       </Link>
@@ -43,7 +44,7 @@ export default function ShareLink({ slug }: { slug: string }) {
         <SvgTweeterComponent
           className={`
             fill-[--foreground] hover:fill-blue-500 transition-all 
-            duration-300 opacity-65 hover:opacity-100 w-4 hover:scale-110
+            duration-300 opacity-65 hover:opacity-100 w-6 hover:scale-110
             `}
         />
       </Link>
@@ -56,10 +57,11 @@ export default function ShareLink({ slug }: { slug: string }) {
         <SvgLinkedinComponent
           className={`
             fill-[--foreground] hover:fill-blue-500 transition-all 
-            duration-300 opacity-65 hover:opacity-100 w-4 hover:scale-110
+            duration-300 opacity-65 hover:opacity-100 w-6 hover:scale-110
             `}
         />
       </Link>
+      <CopyLinkComponent slug={slug} />
     </div>
   );
 }

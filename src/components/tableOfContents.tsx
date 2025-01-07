@@ -51,7 +51,7 @@ export default function TableContent({ items }: TableContentProps) {
         <div className="">
           <ul className="text-xs lg:text-sm lg:leading-6">
             {items.map((item, index) => (
-              <li key={index}>
+              <li key={index} className="text-sm">
                 <Link
                   href={`#${item.id}`}
                   className={`toc-item block py-1 font-normal ${
