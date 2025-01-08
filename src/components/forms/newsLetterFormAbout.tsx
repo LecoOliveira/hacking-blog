@@ -45,7 +45,7 @@ export default function NewsLetterFormAbout() {
   return (
     <form
       className="embeddable-buttondown-form mt-8 
-      flex flex-col items-start gap-2 relative z-0 w-full mx-auto"
+      flex flex-col items-start gap-2 relative z-0 w-[360px] lg:w-full mx-auto"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div
