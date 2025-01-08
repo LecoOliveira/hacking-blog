@@ -17,6 +17,7 @@ import clock from '../../../../public/clock.webp';
 import calendar from '../../../../public/calendar.webp';
 import NextPosts from '@/components/nextPosts';
 import ShareArticle from '@/components/shareThisArticle';
+import TagsArea from '@/components/tagsArea';
 
 interface PageProps {
   params: Promise<{
@@ -42,7 +43,6 @@ export async function generateMetadata(
   };
 
   return {
-    metadataBase: new URL('https://hackingblog.online'),
     title: title(),
     description: post.properties.Description.rich_text[0].plain_text,
     openGraph: {
@@ -58,7 +58,7 @@ export async function generateMetadata(
       title: title(),
       description: post.properties.Description.rich_text[0].plain_text,
       creator: 'Alex Rocha',
-      images: [`/${post.cover}`],
+      images: [post.cover, ...previousImages],
     },
   };
 }
@@ -166,11 +166,14 @@ export default async function Page(props: PageProps) {
           ></div>
           <ShareArticle slug={slug} />
         </div>
-        <div className="relative mr-0">
-          <TableContent items={toc} />
+        <div>
+          <div className="hidden lg:block sticky top-28 z-10 mr-0">
+            <TableContent items={toc} />
+            <TagsArea />
+          </div>
         </div>
       </div>
-      <div className="mt-20">
+      <div className="mt-48">
         <h2 className="text-center text-3xl font-medium">Veja mais</h2>
         <NextPosts slug={slug} />
       </div>

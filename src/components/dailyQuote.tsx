@@ -5,7 +5,7 @@ export default async function Quote({ quote }: { quote: Props }) {
   const { props } = await quote;
 
   return (
-    <div className="hidden md:block mt-20 text-center">
+    <div className="hidden md:block mt-12 text-center">
       <div
         className="h-[1px] w-full self-stretch 
         bg-gradient-to-tr from-transparent via-white to-transparent 

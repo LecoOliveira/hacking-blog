@@ -43,15 +43,25 @@ export default function TableContent({ items }: TableContentProps) {
   }, [items]);
 
   return (
-    <div className="hidden lg:block sticky top-6 z-10">
-      <h5 className="text-center lg:text-left font-semibold mb-4 leading-6">
+    <div className="">
+      <div
+        className="h-[1px] w-full self-stretch 
+        bg-gradient-to-tr from-transparent via-white to-transparent 
+        opacity-25 mx-auto mt-6"
+      />
+      <h5 className="text-center font-semibold my-3 leading-6">
         Conteúdo da página
       </h5>
+      <div
+        className="h-[1px] w-full self-stretch 
+        bg-gradient-to-tr from-transparent via-white to-transparent 
+        opacity-25 mx-auto mb-4"
+      />
       <div className="">
         <div className="">
-          <ul className="text-xs lg:text-sm lg:leading-6">
+          <ul className="text-xs lg:text-sm lg:leading-6 text-start ">
             {items.map((item, index) => (
-              <li key={index} className="text-sm">
+              <li key={index} className="text-sm ml-4">
                 <Link
                   href={`#${item.id}`}
                   className={`toc-item block py-1 font-normal ${

@@ -23,11 +23,16 @@ export default function AboutMe() {
         bg-gradient-to-tr from-transparent via-white to-transparent 
         opacity-25 mx-auto mt-2 lg:mb-0"
       />
-      <Image
-        className="w-[100px] lg:w-[150px] rounded-full mt-4"
-        src={profilePicture}
-        alt="Foto de perfil"
-      />
+      <div
+        className="mt-4 w-[100px] lg:w-[100px] rounded-full 
+        overflow-hidden"
+      >
+        <Image
+          className="hover:grayscale hover:scale-105"
+          src={profilePicture}
+          alt="Foto de perfil"
+        />
+      </div>
       <p
         className="tracking-tight font-extralight mt-4 text-sm 
         lg:text-base text-center w-11/12"

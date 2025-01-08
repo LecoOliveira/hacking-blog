@@ -49,7 +49,7 @@ export default async function Tags({ tag }: TagsProps) {
                       hover:text-[--background] transition-all duration-200 
                   `}
         >
-          {`#${t.name}`}
+          {`#${t.name.toLowerCase()}`}
         </Link>
       ))}
     </div>

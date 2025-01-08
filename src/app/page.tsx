@@ -82,7 +82,7 @@ export default async function Home() {
           </ul>
         </nav>
         <section
-          className="place-self-center sticky top-2 z-10 md:place-self-start 
+          className="place-self-center sticky top-24 z-10 md:place-self-start 
           w-[250px] sm:w-[200px] lg:w-[280px] mr-0"
         >
           <AboutMe />

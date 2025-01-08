@@ -67,6 +67,7 @@ export default function FormContact() {
             className="w-full sm:w-[245px] md:w-[345px] lg:w-[395px] h-[40px] 
             border border-white/10 rounded-md p-2 mb-4 bg-transparent 
             focus:outline-none placeholder:text-white/50 placeholder:text-sm"
+            required
           />
           <input
             type="email"
@@ -76,12 +77,13 @@ export default function FormContact() {
             h-[40px] border border-white/10
             rounded-md p-2 mb-4 bg-transparent focus:outline-none 
             placeholder:text-white/50 placeholder:text-sm"
+            required
           />
         </div>
         <textarea
           placeholder="Mensagem"
           name="texto"
-          className="w-full h-[250px] border border-white/10 
+          className="w-full h-[230px] border border-white/10 
           rounded-md p-2 mb-4 bg-transparent focus:outline-none 
           placeholder:text-white/50 placeholder:text-sm"
           required

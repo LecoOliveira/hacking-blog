@@ -6,7 +6,7 @@ import SvgInstagramNewsletter from './svgComponents/svgInstagram2';
 
 export default function Subscription() {
   return (
-    <div className="flex flex-col mt-10 sm:mt-16 text-center items-center">
+    <div className="flex flex-col mt-10 sm:mt-12 text-center items-center">
       <div
         className="h-[1px] w-full self-stretch 
         bg-gradient-to-tr from-transparent via-white to-transparent 

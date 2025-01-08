@@ -4,7 +4,6 @@ import PaginationPage from '@/components/pagination';
 import SearchForm from '@/components/searchForm';
 import { Page } from '@/types/notionTypes';
 import axios from 'axios';
-// import { notFound } from 'next/navigation';
 
 export default async function HomePage(props: {
   searchParams?: Promise<{ page?: string | undefined; search?: string }>;
@@ -35,6 +34,11 @@ export default async function HomePage(props: {
       <div className="flex justify-center">
         <h1 className="-mb-12 text-5xl font-semibold "> POSTS </h1>
       </div>
+      {searchParams?.search && (
+        <p className="mt-20 -mb-12 text-center md:text-start">
+          Resultados para: {`"${searchParams.search?.toLowerCase()}"`}
+        </p>
+      )}
       <div className="grid grid-cols-1">
         <section
           className="grid grid-cols-1 md:grid-cols-2 gap-10
