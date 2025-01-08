@@ -28,7 +28,8 @@ export default function AboutMe() {
         overflow-hidden"
       >
         <Image
-          className="hover:grayscale hover:scale-105"
+          className="hover:grayscale hover:scale-105 transition-all 
+          duration-300"
           src={profilePicture}
           alt="Foto de perfil"
         />

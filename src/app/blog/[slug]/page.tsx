@@ -18,6 +18,7 @@ import calendar from '../../../../public/calendar.webp';
 import NextPosts from '@/components/nextPosts';
 import ShareArticle from '@/components/shareThisArticle';
 import TagsArea from '@/components/tagsArea';
+import NewsLetterFormAbout from '@/components/newsLetterFormAbout';
 
 interface PageProps {
   params: Promise<{
@@ -176,6 +177,12 @@ export default async function Page(props: PageProps) {
       <div className="mt-48">
         <h2 className="text-center text-3xl font-medium">Veja mais</h2>
         <NextPosts slug={slug} />
+      </div>
+      <div className="m-auto mt-36 -mb-24">
+        <h2 className="text-center text-xl font-medium md:text-2xl mb-4">
+          Se inscreva na nossa NewsLetter
+        </h2>
+        <NewsLetterFormAbout />
       </div>
     </div>
   );
