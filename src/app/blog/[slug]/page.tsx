@@ -58,7 +58,7 @@ export async function generateMetadata(
       title: title(),
       description: post.properties.Description.rich_text[0].plain_text,
       creator: 'Alex Rocha',
-      images: [post.cover, ...previousImages],
+      images: [post.cover],
     },
   };
 }
