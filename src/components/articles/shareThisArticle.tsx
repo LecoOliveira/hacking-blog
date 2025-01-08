@@ -1,4 +1,4 @@
-import ShareLinkPost from './socialShareLinksPost';
+import ShareLinkPost from '../socialShareLinksPost';
 
 export default function ShareArticle({ slug }: { slug: string }) {
   return (

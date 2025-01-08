@@ -1,11 +1,11 @@
 import { formatarDataEmPortugues } from '@/lib/utils';
 import { PostProps } from '@/types/notionTypes';
-import calendar from '../../public/calendar.webp';
-import userIcon from '../../public/icons8-user-male-52-_1_.webp';
+import calendar from '../../../public/calendar.webp';
+import userIcon from '../../../public/icons8-user-male-52-_1_.webp';
 import Image from 'next/image';
 import Link from 'next/link';
-import TagCard from './tagCard';
-import ShareLink from './socialShareLinks';
+import TagCard from '../tagCard';
+import ShareLink from '../socialShareLinks';
 
 export default function PostList({
   cover,

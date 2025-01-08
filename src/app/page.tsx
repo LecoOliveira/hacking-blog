@@ -1,10 +1,10 @@
-import AboutMe from '@/components/aboutMe';
-import Quote from '@/components/dailyQuote';
-import FormContact from '@/components/formContact';
-import InitialPhrase from '@/components/initialPhrase';
-import PostList from '@/components/postList';
-import Post from '@/components/postPrincipal';
-import Subscription from '@/components/subscription';
+import AboutMe from '@/components/homePage/aboutMe';
+import Quote from '@/components/homePage/dailyQuote';
+import FormContact from '@/components/forms/formContact';
+import InitialPhrase from '@/components/homePage/initialPhrase';
+import PostList from '@/components/homePage/postList';
+import Post from '@/components/homePage/postPrincipal';
+import Subscription from '@/components/homePage/subscription';
 import { fetchPages } from '@/lib/notion';
 import DailyQuote from '@/lib/quotes';
 import Link from 'next/link';

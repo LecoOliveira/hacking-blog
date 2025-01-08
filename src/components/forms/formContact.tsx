@@ -2,7 +2,7 @@
 
 import { sendEmail } from '@/lib/sendEmail';
 import { useRef, useState } from 'react';
-import AlertComponent from './alert';
+import AlertComponent from '../alert';
 
 export default function FormContact() {
   const [result, setResult] = useState<{

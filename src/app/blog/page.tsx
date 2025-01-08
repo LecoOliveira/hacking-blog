@@ -1,7 +1,7 @@
 import CardPost from '@/components/cardPosts';
-import Navigation from '@/components/navProgress';
+import Navigation from '@/components/articles/navProgress';
 import PaginationPage from '@/components/pagination';
-import SearchForm from '@/components/searchForm';
+import SearchForm from '@/components/forms/searchForm';
 import { Page } from '@/types/notionTypes';
 import axios from 'axios';
 

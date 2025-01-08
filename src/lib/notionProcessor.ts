@@ -7,7 +7,7 @@ import {
 } from '@notionhq/client/build/src/api-endpoints';
 import hljsPlugin from '@notion-render/hljs-plugin';
 import bookmarkPlugin from '@notion-render/bookmark-plugin';
-import { Item } from '@/components/tableOfContents';
+import { Item } from '@/components/articles/tableOfContents';
 import { notion } from '@/lib/notion';
 
 export async function processBlocks(

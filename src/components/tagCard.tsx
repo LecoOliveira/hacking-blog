@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { colorClasses, colorClassesBg } from './tags';
+import { colorClasses, colorClassesBg } from './articles/tags';
 
 export default function TagCard({ tag, cor }: { tag: string; cor: string }) {
   return (

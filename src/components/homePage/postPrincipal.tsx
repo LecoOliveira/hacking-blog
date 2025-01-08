@@ -1,10 +1,10 @@
 import { formatarDataEmPortugues } from '@/lib/utils';
 import { PostProps } from '@/types/notionTypes';
 import Image from 'next/image';
-import calendar from '../../public/calendar.webp';
-import userIcon from '../../public/icons8-user-male-52-_1_.webp';
+import calendar from '../../../public/calendar.webp';
+import userIcon from '../../../public/icons8-user-male-52-_1_.webp';
 import Link from 'next/link';
-import ShareLink from './socialShareLinks';
+import ShareLink from '../socialShareLinks';
 
 // import TagCard from './tagCard';
 

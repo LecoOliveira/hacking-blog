@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import NewsletterForm from './newsletterForm';
-import SvgGithubNewsletter from './svgComponents/svgGithub2';
-import SvgLinkedinNewsletter from './svgComponents/svgLinkedin';
-import SvgInstagramNewsletter from './svgComponents/svgInstagram2';
+import NewsletterForm from '../forms/newsletterForm';
+import SvgGithubNewsletter from '../svgComponents/svgGithub2';
+import SvgLinkedinNewsletter from '../svgComponents/svgLinkedin';
+import SvgInstagramNewsletter from '../svgComponents/svgInstagram2';
 
 export default function Subscription() {
   return (

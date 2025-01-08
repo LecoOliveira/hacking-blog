@@ -1,7 +1,7 @@
 // import Comments from '@/components/commentsArea';
-import Navigation from '@/components/navProgress';
-import TableContent from '@/components/tableOfContents';
-import Tags from '@/components/tags';
+import Navigation from '@/components/articles/navProgress';
+import TableContent from '@/components/articles/tableOfContents';
+import Tags from '@/components/articles/tags';
 import {
   fetchBySlug,
   fetchPageBlocks,
@@ -15,10 +15,10 @@ import Image from 'next/image';
 import { ResolvingMetadata } from 'next';
 import clock from '../../../../public/clock.webp';
 import calendar from '../../../../public/calendar.webp';
-import NextPosts from '@/components/nextPosts';
-import ShareArticle from '@/components/shareThisArticle';
-import TagsArea from '@/components/tagsArea';
-import NewsLetterFormAbout from '@/components/newsLetterFormAbout';
+import NextPosts from '@/components/articles/nextPosts';
+import ShareArticle from '@/components/articles/shareThisArticle';
+import TagsArea from '@/components/articles/tagsArea';
+import NewsLetterFormAbout from '@/components/forms/newsLetterFormAbout';
 
 interface PageProps {
   params: Promise<{

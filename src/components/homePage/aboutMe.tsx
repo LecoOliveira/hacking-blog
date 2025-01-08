@@ -1,6 +1,6 @@
 import Image from 'next/image';
 // eslint-disable-next-line max-len
-import profilePicture from '../../public/profilePicture/IMG_20221210_151515_627.jpg';
+import profilePicture from '../../../public/profilePicture/IMG_20221210_151515_627.jpg';
 import Link from 'next/link';
 
 export default function AboutMe() {

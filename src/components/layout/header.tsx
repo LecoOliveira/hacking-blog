@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '../../public/Hack1ng-BL0G.webp';
-import HeaderItem, { HeaderItemsType } from './headerItems';
+import logo from '../../../public/Hack1ng-BL0G.webp';
+import HeaderItem, { HeaderItemsType } from '../layout/headerItems';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 

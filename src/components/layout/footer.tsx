@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import logo from '../../public/hackingbloglogo.webp';
+import logo from '../../../public/hackingbloglogo.webp';
 import Link from 'next/link';
 
 export default function Footer() {
