@@ -65,7 +65,7 @@ export default async function Quote({ quote }: { quote: Props }) {
         <footer className="mt-6">
           <div
             className="text-xs lg:text-sm font-semibold 
-            text-gray-600"
+            text-gray-400"
           >
             {`${props.author}`}
           </div>

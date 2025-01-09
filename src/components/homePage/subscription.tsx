@@ -27,7 +27,11 @@ export default function Subscription() {
         className="flex flex-row gap-4 items-center 
         place-content-center mt-7"
       >
-        <Link href={'https://istagram.com/lecooliveira_'} target="_blank">
+        <Link
+          href={'https://istagram.com/lecooliveira_'}
+          target="_blank"
+          title="Seguir no Instagram"
+        >
           <SvgInstagramNewsletter
             className="w-6 h-6 fill-[--foreground] opacity-80
             hover:fill-blue-500 hover:opacity-100 transition-all duration-300 
@@ -35,6 +39,7 @@ export default function Subscription() {
           />
         </Link>
         <Link
+          title="Seguir no Linkedin"
           href={'https://www.linkedin.com/in/alex-rocha-23119411b/'}
           target="_blank"
         >
@@ -44,7 +49,11 @@ export default function Subscription() {
             hover:scale-110"
           />
         </Link>
-        <Link href={'https://github.com/LecoOliveira/'} target="_blank">
+        <Link
+          href={'https://github.com/LecoOliveira/'}
+          target="_blank"
+          title="Seguir no Github"
+        >
           <SvgGithubNewsletter
             className="w-6 h-6 fill-[--foreground] opacity-80
             hover:fill-blue-500 hover:opacity-100 transition-all duration-300

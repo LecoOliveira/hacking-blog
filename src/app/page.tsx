@@ -45,7 +45,7 @@ export default async function Home() {
         <nav className="place-self-center md:place-self-start">
           <ul className="w-[350px] sm:w-[450px] md:w-[420px] lg:w-[600px]">
             {listPosts.map(async (post) => (
-              <div key={post?.slug} className="mb-16">
+              <li key={post?.slug} className="mb-16">
                 <PostList
                   cor={post?.tags.color}
                   tag={post?.tags.name}
@@ -60,7 +60,7 @@ export default async function Home() {
                   slug={post?.slug}
                   user={post?.user}
                 />
-              </div>
+              </li>
             ))}
             <div className="m-auto w-[250px] -mt-3 flex flex-col items-center">
               <div
