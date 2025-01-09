@@ -63,7 +63,7 @@ export default function TableContent({ items }: TableContentProps) {
       <div
         className="h-[1px] w-full self-stretch 
         bg-gradient-to-tr from-transparent via-white to-transparent 
-        opacity-25 mx-auto mt-6"
+        opacity-25 mx-auto"
       />
       <h5 className="text-center font-semibold my-3 leading-6">
         Conteúdo da página

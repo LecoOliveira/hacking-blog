@@ -5,34 +5,42 @@ import Link from 'next/link';
 import logo from '../../../public/Hack1ng-BL0G.webp';
 import HeaderItem, { HeaderItemsType } from '../layout/headerItems';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const pathName = usePathname();
+
   const items: HeaderItemsType[] = [
-    {
-      url: '/blog',
-      item: 'Posts',
-    },
-    {
-      url: '/writeups',
-      item: 'Writeups',
-    },
-    {
-      url: '/about',
-      item: 'Sobre',
-    },
-    {
-      url: '/about#contato',
-      item: 'Contato',
-    },
+    { url: '/blog', item: 'Posts' },
+    { url: '/writeups', item: 'Writeups' },
+    { url: '/about', item: 'Sobre' },
+    { url: '/about#contato', item: 'Contato' },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(window.scrollY > 0);
+      setIsVisible(currentScrollY < lastScrollY || currentScrollY < 50);
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   return (
     <header
-      className="lg:block backdrop-blur-3xl sticky top-0 z-50 h-20 
-    bg-[#0e1018]/70"
+      className={`lg:block backdrop-blur-3xl sticky top-0 z-50 h-20 
+    bg-[#0e1018]/50 ${isScrolled ? 'shadow-2xl' : ''} ${
+      isVisible ? 'translate-y-0' : '-translate-y-full'
+    } transition-all duration-500`}
     >
       <div
         className="flex flex-row items-center w-11/12 md:w-[600px] 

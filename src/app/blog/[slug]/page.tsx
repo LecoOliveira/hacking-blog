@@ -1,4 +1,3 @@
-// import Comments from '@/components/commentsArea';
 import Navigation from '@/components/articles/navProgress';
 import TableContent from '@/components/articles/tableOfContents';
 import Tags from '@/components/articles/tags';
@@ -19,6 +18,7 @@ import NextPosts from '@/components/articles/nextPosts';
 import ShareArticle from '@/components/articles/shareThisArticle';
 import TagsArea from '@/components/articles/tagsArea';
 import NewsLetterFormAbout from '@/components/forms/newsLetterFormAbout';
+import Link from 'next/link';
 
 interface PageProps {
   params: Promise<{
@@ -75,6 +75,8 @@ export default async function Page(props: PageProps) {
   const date = post.properties.Date.date.start;
   const tag = post.properties.Tags.multi_select;
   const titleArray = post.properties.Title.title;
+  const description = post.properties.Description.rich_text[0].plain_text;
+  console.log(description);
   const title = (array: DataItem[] = titleArray): string => {
     return array.map((item) => item.plain_text).join('');
   };
@@ -91,6 +93,7 @@ export default async function Page(props: PageProps) {
       >
         {title()}
       </h1>
+      <h2 className="text-center mb-8 text-xl -mt-4">{description}</h2>
       <div className="grid grid-cols-1">
         <div
           className="relative w-screen lg:w-[1200px] place-self-center 
@@ -118,8 +121,17 @@ export default async function Page(props: PageProps) {
             loading="eager"
           />
         )}
-        <div className="py-2 px-4">
-          <h2 className="font-semibold">{user.name}</h2>
+        <div className="py-2 px-4 text-center">
+          <Link
+            href={'/about'}
+            className="font-semiboldafter:duration-500 ease-out 
+            after:block after:h-0.5 
+            after:w-full after:origin-bottom-right after:scale-x-0 
+            after:bg-blue-500 after:transition-transform 
+            after:hover:origin-bottom-left after:hover:scale-x-100"
+          >
+            {user.name}
+          </Link>
           <p className="font-thin text-sm">Ethical Hacker</p>
         </div>
       </div>
@@ -168,7 +180,7 @@ export default async function Page(props: PageProps) {
           <ShareArticle slug={slug} />
         </div>
         <div>
-          <div className="hidden lg:block sticky top-28 z-10 mr-0">
+          <div className="hidden lg:block sticky top-8 z-10 mr-0">
             <TableContent items={toc} />
             <TagsArea />
           </div>
