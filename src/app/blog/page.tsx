@@ -9,7 +9,7 @@ export default async function HomePage(props: {
   searchParams?: Promise<{ page?: string | undefined; search?: string }>;
 }) {
   const searchParams = await props.searchParams;
-  const response = await axios('http://localhost:3000/api/blog', {
+  const response = await axios(process.env.API_ADDRESS!, {
     params: {
       search: searchParams?.search,
     },

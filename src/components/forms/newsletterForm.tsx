@@ -2,10 +2,17 @@
 
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 
-type FormData = {
-  email: string;
-};
+const emailSchema = z.object({
+  email: z
+    .string()
+    .nonempty('Preencha com um email válido')
+    .email('Email inválido'),
+});
+
+type FormData = z.infer<typeof emailSchema>;
 
 const NewsletterForm: React.FC = () => {
   const {
@@ -13,7 +20,9 @@ const NewsletterForm: React.FC = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormData>();
+  } = useForm<FormData>({
+    resolver: zodResolver(emailSchema),
+  });
 
   const onSubmit = (data: FormData) => {
     window.open('https://buttondown.com/AlexRocha', 'popupwindow');
@@ -48,13 +57,7 @@ const NewsletterForm: React.FC = () => {
           type="email"
           id="bd-email"
           placeholder="Seu melhor Email"
-          {...register('email', {
-            required: 'Preencha com um email válido',
-            pattern: {
-              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-              message: 'Email inválido',
-            },
-          })}
+          {...register('email')}
         />
       </div>
       {errors.email && (

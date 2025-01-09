@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
-// import { fetchPages2 } from '../../../lib/notion';
 import fecthTeste from '@/lib/pagination';
-import { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints';
+import { MultiSelect } from '@/types/notionTypes';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -11,16 +10,20 @@ export async function GET(request: Request) {
   const filteredResults = response.resultAllPages
     .map((page) => ({
       ...page,
-      results: page.results?.filter(
-        (post) =>
+      results: page.results?.filter((post) => {
+        if (
           'properties' in post &&
-          'slug' in post.properties &&
-          'rich_text' in post.properties.slug &&
-          post.properties.slug.rich_text.some(
-            (slugItem: RichTextItemResponse) =>
-              slugItem.plain_text.includes(search ?? ''),
-          ),
-      ),
+          'Tags' in post.properties &&
+          'multi_select' in post.properties.Tags &&
+          Array.isArray(post.properties.Tags.multi_select)
+        ) {
+          return post.properties.Tags.multi_select.some(
+            (tagItem: MultiSelect) =>
+              tagItem.name.toLowerCase().includes(search ?? ''),
+          );
+        }
+        return false;
+      }),
     }))
     .filter((page) => page.results && page.results.length > 0);
 
