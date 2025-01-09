@@ -62,24 +62,24 @@ export default async function Home() {
                 />
               </li>
             ))}
-            <div className="m-auto w-[250px] -mt-3 flex flex-col items-center">
-              <div
-                className="h-[1px] w-[250px] self-stretch 
+          </ul>
+          <div className="m-auto w-[250px] -mt-3 flex flex-col items-center">
+            <div
+              className="h-[1px] w-[250px] self-stretch 
                 bg-gradient-to-tr from-transparent via-white to-transparent 
                 opacity-25 mb-12"
-              ></div>
-              <Link
-                href="/blog"
-                className="-mt-[60px] bg-[--background] px-4 z-10 
+            ></div>
+            <Link
+              href="/blog"
+              className="-mt-[60px] bg-[--background] px-4 z-10 
                 after:duration-500 ease-out after:block after:h-0.5 
                 after:w-full after:origin-bottom-right after:scale-x-0 
                 after:bg-blue-500 after:transition-transform 
                 after:hover:origin-bottom-left after:hover:scale-x-100"
-              >
-                Mais Posts
-              </Link>
-            </div>
-          </ul>
+            >
+              Mais Posts
+            </Link>
+          </div>
         </nav>
         <section
           className="place-self-center sticky top-24 z-10 md:place-self-start 
