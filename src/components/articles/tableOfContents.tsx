@@ -42,6 +42,22 @@ export default function TableContent({ items }: TableContentProps) {
     };
   }, [items]);
 
+  const handleLinkClick = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80; // Margem superior desejada
+      const rect = element.getBoundingClientRect();
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      const offsetPosition = rect.top + scrollTop - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <div className="">
       <div
@@ -64,6 +80,10 @@ export default function TableContent({ items }: TableContentProps) {
               <li key={index} className="text-sm ml-4">
                 <Link
                   href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick(item.id);
+                  }}
                   className={`toc-item block py-1 font-normal ${
                     activeId === item.id ? 'text-blue-500' : 'text-white/50'
                   } 
