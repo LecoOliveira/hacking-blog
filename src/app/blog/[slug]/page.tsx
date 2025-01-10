@@ -76,7 +76,6 @@ export default async function Page(props: PageProps) {
   const tag = post.properties.Tags.multi_select;
   const titleArray = post.properties.Title.title;
   const description = post.properties.Description.rich_text[0].plain_text;
-  console.log(description);
   const title = (array: DataItem[] = titleArray): string => {
     return array.map((item) => item.plain_text).join('');
   };
@@ -93,7 +92,12 @@ export default async function Page(props: PageProps) {
       >
         {title()}
       </h1>
-      <h2 className="text-center mb-8 text-xl -mt-4">{description}</h2>
+      <h2
+        className="text-center mb-4 md:mb-8 text-base md:text-xl 
+        mt-4 md:-mt-4 px-4"
+      >
+        {description}
+      </h2>
       <div className="grid grid-cols-1">
         <div
           className="relative w-screen lg:w-[1200px] place-self-center 
