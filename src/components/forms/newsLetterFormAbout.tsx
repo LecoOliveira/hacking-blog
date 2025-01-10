@@ -50,7 +50,7 @@ export default function NewsLetterFormAbout() {
     >
       <div
         className="flex flex-row items-center justify-start gap-1 
-      lg:gap-2 w-full"
+      lg:gap-2 w-11/12 md:w-full"
       >
         <input
           className="block w-80 h-11 bg-transparent border 
