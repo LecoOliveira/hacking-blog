@@ -35,7 +35,7 @@ export default function CardPost({
           loading="eager"
         />
       </Link>
-      <div className="flex flex-row items-center justify-between mt-4">
+      <div className="flex flex-row items-start justify-between mt-4 gap-2">
         <Link
           href={`/blog/${slug}`}
           className="text-sm ml-2 font-semibold italic after:duration-500 
@@ -44,8 +44,7 @@ export default function CardPost({
           after:transition-transform after:hover:origin-bottom-left 
           after:hover:scale-x-100"
         >
-          {' '}
-          {title}{' '}
+          {title}
         </Link>
         <TagCard tag={tag || ''} cor={cor || ''} />
       </div>

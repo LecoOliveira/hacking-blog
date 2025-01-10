@@ -32,7 +32,7 @@ export default function PostList({
           loading="lazy"
         />
       </Link>
-      <div className="flex flex-row items-center justify-between mt-4 py-0">
+      <div className="flex flex-row items-start justify-between mt-4 gap-2">
         <Link
           href={`/blog/${slug}`}
           className="pointer-events-auto ml-2 text-base lg:text-xl 
