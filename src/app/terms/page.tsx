@@ -3,12 +3,12 @@ import Link from 'next/link';
 export default function Terms() {
   return (
     <div className="w-11/12 sm:w-[600px] md:w-[800px] mx-auto my-40">
-      <h2 className="text-xl my-4">
-        <span>1. Termos</span>
+      <h2 className="text-4xl my-4 font-semibold text-center">
+        <span>Termos</span>
       </h2>
       <p>
         <span>
-          Ao acessar ao site{' '}
+          Ao acessar ao site
           <Link href="https://hackingblog.online">Hacking BLOG</Link>, concorda
           em cumprir estes termos de serviço, todas as leis e regulamentos
           aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as
@@ -18,8 +18,8 @@ export default function Terms() {
           comerciais aplicáveis.
         </span>
       </p>
-      <h2>
-        <span>2. Uso de Licença</span>
+      <h2 className="text-xl my-4 font-semibold text-center">
+        <span>Uso de Licença</span>
       </h2>
       <p>
         <span>
@@ -68,8 +68,8 @@ export default function Terms() {
           posse, seja em formato eletrónico ou impresso.
         </span>
       </p>
-      <h2 className="text-xl my-4">
-        <span>3. Isenção de responsabilidade</span>
+      <h2 className="text-xl my-4 font-semibold text-center">
+        <span>Isenção de responsabilidade</span>
       </h2>
       <ol>
         <li>
@@ -91,8 +91,8 @@ export default function Terms() {
           </span>
         </li>
       </ol>
-      <h2 className="text-xl my-4">
-        <span>4. Limitações</span>
+      <h2 className="text-xl my-4 font-semibold text-center">
+        <span>Limitações</span>
       </h2>
       <p>
         <span>
@@ -107,8 +107,8 @@ export default function Terms() {
           ou incidentais, essas limitações podem não se aplicar a você.
         </span>
       </p>
-      <h2 className="text-xl my-4">
-        <span>5. Precisão dos materiais</span>
+      <h2 className="text-xl my-4 font-semibold text-center">
+        <span>Precisão dos materiais</span>
       </h2>
       <p>
         <span>
@@ -120,8 +120,8 @@ export default function Terms() {
           compromete a atualizar os materiais.
         </span>
       </p>
-      <h2 className="text-xl my-4">
-        <span>6. Links</span>
+      <h2 className="text-xl my-4 font-semibold text-center">
+        <span>Links</span>
       </h2>
       <p>
         <span>
@@ -134,7 +134,7 @@ export default function Terms() {
       <p>
         <br />
       </p>
-      <h3 className="text-xl my-4">
+      <h3 className="text-xl my-4 font-semibold text-center">
         <span>Modificações</span>
       </h3>
       <p>
@@ -144,7 +144,7 @@ export default function Terms() {
           vinculado à versão atual desses termos de serviço.
         </span>
       </p>
-      <h3 className="text-xl my-4">
+      <h3 className="text-xl my-4 font-semibold text-center">
         <span>Lei aplicável</span>
       </h3>
       <p>

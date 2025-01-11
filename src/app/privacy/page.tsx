@@ -5,7 +5,7 @@ export default function Privacy() {
       text-[--foreground] my-32"
     >
       <p></p>
-      <h2 className="text-center my-8 text-xl">
+      <h2 className="text-center my-8 text-4xl font-semibold">
         <span>Política Privacidade</span>
       </h2>
       <p className="leading-7">
@@ -68,7 +68,7 @@ export default function Privacy() {
       <p className="leading-7">
         <span />
       </p>
-      <h3 className="text-xl my-8 text-center">
+      <h3 className="text-xl my-8 text-center font-semibold">
         <span>Compromisso do Usuário</span>
       </h3>
       <p className="leading-7 mt-4">
@@ -106,7 +106,7 @@ export default function Privacy() {
           </span>
         </li>
       </ul>
-      <h3 className="my-8 text-xl text-center">
+      <h3 className="my-8 text-xl text-center font-semibold">
         <span>Mais informações</span>
       </h3>
       <p className="leading-7">
