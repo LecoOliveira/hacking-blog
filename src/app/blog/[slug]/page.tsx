@@ -93,7 +93,7 @@ export default async function Page(props: PageProps) {
         {title()}
       </h1>
       <h2
-        className="text-center mb-4 md:mb-8 text-base md:text-xl 
+        className="text-center hidden md:flex mb-4 md:mb-8 text-base md:text-xl 
         mt-4 md:-mt-4 px-4"
       >
         {description}
