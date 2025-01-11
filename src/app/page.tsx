@@ -43,7 +43,10 @@ export default async function Home() {
         md:w-[700px] lg:w-[1000px] mx-auto mt-4 md:mt-20"
       >
         <nav className="place-self-center md:place-self-start">
-          <ul className="w-[350px] sm:w-[450px] md:w-[420px] lg:w-[600px]">
+          <ul
+            className="mx-auto w-[350px] sm:w-[450px] md:w-[420px] 
+            lg:w-[600px]"
+          >
             {listPosts.map(async (post) => (
               <li key={post?.slug} className="mb-16">
                 <PostList
