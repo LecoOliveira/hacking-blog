@@ -39,8 +39,8 @@ export default async function Home() {
         )}
       </main>
       <section
-        className="grid-cols-1 md:flex flex-row justify-between sm:w-[650px] 
-        md:w-[700px] lg:w-[1000px] mx-auto mt-4 md:mt-20"
+        className="grid grid-cols-1 md:flex flex-row justify-between 
+        sm:w-[650px] md:w-[700px] lg:w-[1000px] mx-auto mt-4 md:mt-20"
       >
         <nav className="place-self-center md:place-self-start">
           <ul

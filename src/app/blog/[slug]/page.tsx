@@ -167,7 +167,7 @@ export default async function Page(props: PageProps) {
         <div className="lg:min-w-[700px]">
           <div
             className="w-11/12 max-w-min-[360px] sm:w-[600px] md:w-full 
-            place-self-center lg:w-full prose prose:opacity-90 prose-invert 
+            m-auto lg:w-full prose prose:opacity-90 prose-invert 
             prose-ul:text-sm prose-headings:mt-10 prose-p:mt-10
             lg:prose-ul:text-base prose-code:text-xs lg:prose-code:text-sm 
             prose-h2:text-2xl prose-p:text-sm lg:prose-p:text-base  
