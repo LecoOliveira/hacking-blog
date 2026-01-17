@@ -18,6 +18,8 @@ const eslintConfig = [
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     rules: {
+      'react/no-unescaped-entities': 'off',
+      '@next/next/no-page-custom-font': 'off',
       'prettier/prettier': 'error', // Mostra erros de formatação do Prettier no ESLint
       'max-len': ['error', { code: 80, tabWidth: 2, ignoreUrls: true }], // Limite de 80 colunas
     },
