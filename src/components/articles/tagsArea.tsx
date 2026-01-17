@@ -24,7 +24,11 @@ function filteredTags(arrays: Arrays) {
 }
 
 export default async function TagsArea() {
-  const response = await fetch('http://localhost:3000/api/blog');
+  const response = await fetch('http://localhost:3000/api/blog', {
+    headers: {
+      Authorization: `Bearer ${process.env.INTERNAL_API_TOKEN}`
+    },
+  });
   const data = await response.json();
   const pages = data.resultAllPages;
   const allPosts = pages.map((page: NotionDatabaseResponse) => {
