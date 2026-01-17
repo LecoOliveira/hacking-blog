@@ -3,6 +3,15 @@ import fecthTeste from '@/lib/pagination';
 import { MultiSelect } from '@/types/notionTypes';
 
 export async function GET(request: Request) {
+  const internalToken = request.headers.get('x-internal-token');
+
+  if (internalToken !== process.env.INTERNAL_API_TOKEN) {
+    return NextResponse.json(
+      { error: 'Forbidden' },
+      { status: 403 },
+    );
+  }
+
   const { searchParams } = new URL(request.url);
   const search = searchParams.get('search');
 
