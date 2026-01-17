@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "git pull && npm install && npm run build && pm2 restart hacking-blog"
+    "deploy": "git pull && sudo npm install && sudo npm run build && sudo pm2 restart hacking-blog"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
