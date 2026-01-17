@@ -13,6 +13,9 @@ export default async function HomePage(props: {
     params: {
       search: searchParams?.search,
     },
+    headers: {
+      'x-internal-token': process.env.INTERNAL_API_TOKEN!,
+    },
   });
   const data = await response.data;
   const pages = data.resultAllPages;
