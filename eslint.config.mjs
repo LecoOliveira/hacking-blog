@@ -18,12 +18,17 @@ const eslintConfig = [
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     rules: {
-      'react/no-unescaped-entities': 'off',
-      '@next/next/no-page-custom-font': 'off',
       'prettier/prettier': 'error', // Mostra erros de formatação do Prettier no ESLint
       'max-len': ['error', { code: 80, tabWidth: 2, ignoreUrls: true }], // Limite de 80 colunas
     },
   },
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    '.next/**',
+    'out/**',
+    'build/**',
+    'next-env.d.ts',
+  ]),
 ];
 
 export default eslintConfig;
